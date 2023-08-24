@@ -1,0 +1,1434 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#"
+     xml:base="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.aalto.fi/soarml"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.aalto.fi/soarml#belong -->
+
+    <owl:ObjectProperty rdf:about="http://www.aalto.fi/soarml#belong">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#MLModel"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#Author"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#cause -->
+
+    <owl:ObjectProperty rdf:about="http://www.aalto.fi/soarml#cause">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Attack"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#configure -->
+
+    <owl:ObjectProperty rdf:about="http://www.aalto.fi/soarml#configure">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#SecurityExpert"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#SecurityConfiguration"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#ToolConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#detect -->
+
+    <owl:ObjectProperty rdf:about="http://www.aalto.fi/soarml#detect">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#DetectionTool"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#Attack"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#evaluate -->
+
+    <owl:ObjectProperty rdf:about="http://www.aalto.fi/soarml#evaluate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#SecurityExpert"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#Performance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#exploitedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.aalto.fi/soarml#exploitedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Vulnerability"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#ExploitMethod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#expose -->
+
+    <owl:ObjectProperty rdf:about="http://www.aalto.fi/soarml#expose">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#MLService"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#Performance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#happenIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.aalto.fi/soarml#happenIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Event"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#Context"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#hasConfiguration -->
+
+    <owl:ObjectProperty rdf:about="http://www.aalto.fi/soarml#hasConfiguration">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#hasMLConfig -->
+
+    <owl:ObjectProperty rdf:about="http://www.aalto.fi/soarml#hasMLConfig">
+        <rdfs:subPropertyOf rdf:resource="http://www.aalto.fi/soarml#hasConfiguration"/>
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#MLService"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#MLSpecificConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#hasModel -->
+
+    <owl:ObjectProperty rdf:about="http://www.aalto.fi/soarml#hasModel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#MLService"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#MLModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#hasObject -->
+
+    <owl:ObjectProperty rdf:about="http://www.aalto.fi/soarml#hasObject">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Vulnerability"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#VulObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#hasProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.aalto.fi/soarml#hasProperty">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Attack"/>
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Vulnerability"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#AttackProperty"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#Vulproperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#hasSecConfig -->
+
+    <owl:ObjectProperty rdf:about="http://www.aalto.fi/soarml#hasSecConfig">
+        <rdfs:subPropertyOf rdf:resource="http://www.aalto.fi/soarml#hasConfiguration"/>
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#ConfigurationTool"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#SecurityConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#hasTime -->
+
+    <owl:ObjectProperty rdf:about="http://www.aalto.fi/soarml#hasTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#TrainingProcess"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#TrainingTime"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#hasToolConfig -->
+
+    <owl:ObjectProperty rdf:about="http://www.aalto.fi/soarml#hasToolConfig">
+        <rdfs:subPropertyOf rdf:resource="http://www.aalto.fi/soarml#hasConfiguration"/>
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#DetectionTool"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#ToolConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#has_Vulnerabiilty -->
+
+    <owl:ObjectProperty rdf:about="http://www.aalto.fi/soarml#has_Vulnerabiilty">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Configuration"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#Vulnerability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#initiatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.aalto.fi/soarml#initiatedBy">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Attack"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#Attacker"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#isExploitedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.aalto.fi/soarml#isExploitedBy">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Vulnerability"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#Attack"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#leadTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.aalto.fi/soarml#leadTo">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Attack"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#Consequence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#monitor -->
+
+    <owl:ObjectProperty rdf:about="http://www.aalto.fi/soarml#monitor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#MLService"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#SecurityMetric"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#needCause -->
+
+    <owl:ObjectProperty rdf:about="http://www.aalto.fi/soarml#needCause">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Attack"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#SecurityStatus"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#raise -->
+
+    <owl:ObjectProperty rdf:about="http://www.aalto.fi/soarml#raise">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#DetectionTool"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#trainedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.aalto.fi/soarml#trainedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#MLService"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#TrainingProcess"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#useDataset -->
+
+    <owl:ObjectProperty rdf:about="http://www.aalto.fi/soarml#useDataset">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#TrainingProcess"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#Dataset"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#useTool -->
+
+    <owl:ObjectProperty rdf:about="http://www.aalto.fi/soarml#useTool">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Attack"/>
+        <rdfs:range rdf:resource="http://www.aalto.fi/soarml#Tool"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.aalto.fi/soarml#AVLog -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#AVLog">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#LogEvent"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Alert -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#Alert">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#LogEvent"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#AttackerStatus -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#AttackerStatus">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#SecurityStatus"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Code -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#Code">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#VulObject"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#CodeExecuation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#CodeExecuation">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Consequence"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Configuration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#Configuration">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#VulObject"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#DataAnnihilation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#DataAnnihilation">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Consequence"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Dos -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#Dos">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Consequence"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Email -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#Email">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#ExploitMethod"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#FwLog -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#FwLog">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#LogEvent"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Gateway -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#Gateway">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Topology"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Glacier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#Glacier">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Tool"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Host -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#Host">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Configuration"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#IPPacket -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#IPPacket">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#RawEvent"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#IllegalAccess -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#IllegalAccess">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Consequence"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#InfoLeakage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#InfoLeakage">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Consequence"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Location -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#Location">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#AttackProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#LossType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#LossType">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Vulproperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#NetSpy -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#NetSpy">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Tool"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Network -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#Network">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Topology"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Node -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#Node">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Topology"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#OccurTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#OccurTime">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#AttackProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#OriginIp -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#OriginIp">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#AttackProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Phishing -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#Phishing">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#ExploitMethod"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#PrivilegeEsc -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#PrivilegeEsc">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Consequence"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Process -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#Process">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Configuration"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Program -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#Program">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Configuration"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Protocol -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#Protocol">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#VulObject"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Published -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#Published">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Vulproperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#RemovableMedia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#RemovableMedia">
+        <rdfs:subPropertyOf rdf:resource="http://www.aalto.fi/soarml#Report"/>
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#ExploitMethod"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Report -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#Report">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#LogEvent"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Require -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#Require">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Vulproperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Service -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#Service">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Configuration"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Severity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#Severity">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Vulproperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Sniffit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#Sniffit">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Tool"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#SocialEngineer -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#SocialEngineer">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#ExploitMethod"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Spamming -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#Spamming">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Consequence"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Spyware -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#Spyware">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Attacker"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#SystemStatus -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#SystemStatus">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#SecurityStatus"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#TCPConnect -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#TCPConnect">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#RawEvent"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#TargetIp -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#TargetIp">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#AttackProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#TargetPort -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#TargetPort">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#AttackProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Trojan -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#Trojan">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Attacker"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#User -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#User">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Configuration"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Virus -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#Virus">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Attacker"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Worm -->
+
+    <owl:DatatypeProperty rdf:about="http://www.aalto.fi/soarml#Worm">
+        <rdfs:domain rdf:resource="http://www.aalto.fi/soarml#Attacker"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.aalto.fi/soarml#ALert -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#ALert">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#LogEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#AVLog -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#AVLog">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#LogEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Attack -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Attack">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#AttackProperty -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#AttackProperty">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Attack"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Attacker -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Attacker">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Attack"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#AttackerStatus -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#AttackerStatus">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#SecurityStatus"/>
+        <owl:disjointWith rdf:resource="http://www.aalto.fi/soarml#SystemStatus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Author -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Author"/>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Code -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Code">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#VulObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#CodeExecuation -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#CodeExecuation">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Consequence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Configuration -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Configuration">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Context"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#ConfigurationTool -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#ConfigurationTool">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#SecurityTool"/>
+        <rdfs:label>Configuration Tool</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Consequence -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Consequence">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Attack"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Context -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Context">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#DataAnnihilation -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#DataAnnihilation">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Consequence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Dataset -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Dataset">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#DetectionTool -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#DetectionTool">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#SecurityTool"/>
+        <rdfs:label>Detection Tool</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Element -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Element"/>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Email -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Email">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#ExploitMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Event -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Event">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#ExploitMethod -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#ExploitMethod">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Vulnerability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#FwLog -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#FwLog">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#LogEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Gateway -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Gateway">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Topology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Glacier -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Glacier">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Tool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#HTTPRequest -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#HTTPRequest">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#RawEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Host -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Host">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Configuration"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#IPPacket -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#IPPacket">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#RawEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#IllegalAccess -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#IllegalAccess">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Consequence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#InfoLeakage -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#InfoLeakage">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Consequence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Location -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Location">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#AttackProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#LogEvent -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#LogEvent">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#LossType -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#LossType">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Vulproperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#MLModel -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#MLModel">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#DetectionTool"/>
+        <rdfs:label>ML Model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#MLService -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#MLService">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#DetectionTool"/>
+        <rdfs:label>ML Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#MLSpecificConfiguration -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#MLSpecificConfiguration">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#ToolConfiguration"/>
+        <rdfs:comment>Serving parameter of ML service</rdfs:comment>
+        <rdfs:label>ML-specific Configuration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#NetSpy -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#NetSpy">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Tool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Network -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Network">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Topology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Node -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Node">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Topology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#OccurTime -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#OccurTime">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#AttackProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#OriginIP -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#OriginIP">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#AttackProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Performance -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Performance">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Phishing -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Phishing">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#ExploitMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#PrivilegeEsc -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#PrivilegeEsc">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Consequence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Process -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Process">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Configuration"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Program -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Program">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Configuration"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Protocol -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Protocol">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#VulObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Published -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Published">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Vulproperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#RawEvent -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#RawEvent">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#RemovableMedia -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#RemovableMedia">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#ExploitMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Report -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Report">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#LogEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Require -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Require">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Vulproperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#SecurityConfiguration -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#SecurityConfiguration">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Configuration"/>
+        <rdfs:label>Security Configuration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#SecurityExpert -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#SecurityExpert">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Element"/>
+        <rdfs:label>Security Expert</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#SecurityMetric -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#SecurityMetric">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Element"/>
+        <rdfs:label>Security Metric</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#SecurityStatus -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#SecurityStatus">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Attack"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#SecurityTool -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#SecurityTool">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Element"/>
+        <rdfs:label>Security Tool</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Service -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Service">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Configuration"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Severity -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Severity">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Vulproperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Sniffit -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Sniffit">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Tool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#SocialEngineer -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#SocialEngineer">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#ExploitMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Spamming -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Spamming">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Consequence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Spyware -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Spyware">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Attacker"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#SystemStatus -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#SystemStatus">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#SecurityStatus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#TCPConnect -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#TCPConnect">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#RawEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#TargetIP -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#TargetIP">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#AttackProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#TargetPort -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#TargetPort">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#AttackProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Tool -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Tool">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Attack"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#ToolConfiguration -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#ToolConfiguration">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Configuration"/>
+        <rdfs:label>Tool Configuration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Topology -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Topology">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Context"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#TrainingProcess -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#TrainingProcess">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#DetectionTool"/>
+        <rdfs:label>Training Process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#TrainingTime -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#TrainingTime">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Element"/>
+        <rdfs:label>Training Time</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Trojan -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Trojan">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Attacker"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#User -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#User">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Configuration"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Virus -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Virus">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Attacker"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#VulObject -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#VulObject">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Vulnerability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Vulnerability -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Vulnerability">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Vulproperty -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Vulproperty">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Vulnerability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#Worm -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#Worm">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#Attacker"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.aalto.fi/soarml#configuration -->
+
+    <owl:Class rdf:about="http://www.aalto.fi/soarml#configuration">
+        <rdfs:subClassOf rdf:resource="http://www.aalto.fi/soarml#VulObject"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.aalto.fi/soarml#哈哈哈 -->
+
+    <owl:NamedIndividual rdf:about="http://www.aalto.fi/soarml#哈哈哈"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#ALert"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#AVLog"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#FwLog"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#Report"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#Code"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#Configuration"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#Protocol"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#CodeExecuation"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#DataAnnihilation"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#IllegalAccess"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#InfoLeakage"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#PrivilegeEsc"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#Spamming"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#Email"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#Phishing"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#RemovableMedia"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#SocialEngineer"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#Gateway"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#Network"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#Node"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#Glacier"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#NetSpy"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#Sniffit"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#HTTPRequest"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#IPPacket"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#TCPConnect"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#Host"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#Process"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#Program"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#Service"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#User"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#Location"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#OccurTime"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#OriginIP"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#TargetIP"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#TargetPort"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#LossType"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#Published"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#Require"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#Severity"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#Spyware"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#Trojan"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#Virus"/>
+            <rdf:Description rdf:about="http://www.aalto.fi/soarml#Worm"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
