@@ -35,7 +35,7 @@ class SimpleMonitor13(simple_switch_13.SimpleSwitch13):
         super(SimpleMonitor13, self).__init__(*args, **kwargs)
         self.report = {}
         self.lock = Lock()
-        # self.qoa_client = QoaClient(config_dict=config_file, registration_url=config_file["registration_url"])
+        self.qoa_client = QoaClient(config_dict=config_file, registration_url=config_file["registration_url"])
         self.datapaths = {}
         self.monitor_thread = hub.spawn(self._monitor)
         
@@ -61,7 +61,7 @@ class SimpleMonitor13(simple_switch_13.SimpleSwitch13):
             for dp in self.datapaths.values():
                 self._request_stats(dp)
             # self.logger.info(str(self.report))
-            # self.qoa_client.report(report=self.report, submit=True)
+            self.qoa_client.report(report=self.report, submit=True)
             hub.sleep(5)
 
 

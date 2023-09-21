@@ -40,7 +40,7 @@ class ryuRestFirewall(rest_firewall.RestFirewallAPI):
         super(ryuRestFirewall, self).__init__(*args, **kwargs)
         self.report = {}
         self.lock = Lock()
-        # self.qoa_client = QoaClient(config_dict=config_file, registration_url=config_file["registration_url"])
+        self.qoa_client = QoaClient(config_dict=config_file, registration_url=config_file["registration_url"])
         self.datapaths = {}
         self.monitor_thread = hub.spawn(self._monitor)
         self.mac_to_port = {}
@@ -152,8 +152,8 @@ class ryuRestFirewall(rest_firewall.RestFirewallAPI):
             self.logger.info("Length datapatch: %d", len(self.datapaths.values()))
             for dp in self.datapaths.values():
                 self._request_stats(dp)
-            # self.logger.info(str(self.report))
-            # self.qoa_client.report(report=self.report, submit=True)
+            self.logger.info(str(self.report))
+            self.qoa_client.report(report=self.report, submit=True)
             hub.sleep(5)
 
 
@@ -214,16 +214,19 @@ class ryuRestFirewall(rest_firewall.RestFirewallAPI):
         if str(ev.msg.datapath.id) not in self.report:
             self.report[str(ev.msg.datapath.id)] = {}
         self.report[str(ev.msg.datapath.id)]["FlowStats"] = {}
-        for stat in sorted([flow for flow in body if flow.priority == 1],
-                           key=lambda flow: (flow.match['in_port'],
-                                             flow.match['eth_dst'])):
-            flow = str(stat.match['in_port'])+"_"+str(stat.match['eth_dst'])
-            self.report[str(ev.msg.datapath.id)]["FlowStats"][flow] = {}
-            self.report[str(ev.msg.datapath.id)]["FlowStats"][flow]["in_port"] = stat.match['in_port']
-            self.report[str(ev.msg.datapath.id)]["FlowStats"][flow]["eth_dst"] = stat.match['eth_dst']
-            self.report[str(ev.msg.datapath.id)]["FlowStats"][flow]["out_port"] = stat.instructions[0].actions[0].port
-            self.report[str(ev.msg.datapath.id)]["FlowStats"][flow]["packet_count"] = stat.packet_count
-            self.report[str(ev.msg.datapath.id)]["FlowStats"][flow]["byte_count"] = stat.byte_count
+        try:
+            for stat in sorted([flow for flow in body if flow.priority == 1],
+                            key=lambda flow: (flow.match['in_port'],
+                                                flow.match['eth_dst'])):
+                flow = str(stat.match['in_port'])+"_"+str(stat.match['eth_dst'])
+                self.report[str(ev.msg.datapath.id)]["FlowStats"][flow] = {}
+                self.report[str(ev.msg.datapath.id)]["FlowStats"][flow]["in_port"] = stat.match['in_port']
+                self.report[str(ev.msg.datapath.id)]["FlowStats"][flow]["eth_dst"] = stat.match['eth_dst']
+                self.report[str(ev.msg.datapath.id)]["FlowStats"][flow]["out_port"] = stat.instructions[0].actions[0].port
+                self.report[str(ev.msg.datapath.id)]["FlowStats"][flow]["packet_count"] = stat.packet_count
+                self.report[str(ev.msg.datapath.id)]["FlowStats"][flow]["byte_count"] = stat.byte_count
+        except:
+            print("error in get flow stats")
         self.lock.release()
 
         self.logger.info('\ndatapath         '
