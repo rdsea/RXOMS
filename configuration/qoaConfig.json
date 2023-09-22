@@ -7,5 +7,5 @@
         "application": "test_sdn",
         "role": "controller"
     },
-    "registration_url": "http://192.168.1.5:5001/registration"
+    "registration_url": "http://192.168.1.148:5010/registration"
 }

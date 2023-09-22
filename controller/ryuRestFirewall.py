@@ -191,7 +191,7 @@ class ryuRestFirewall(rest_firewall.RestFirewallAPI):
         self.report[str(ev.msg.datapath.id)]["Aggregate"]["flow_count"] = body.flow_count
         self.lock.release()
 
-        self.logger.info('\ndatapath         '
+        self.logger.info('datapath         '
                          'byte-count       '
                          'packet-count     '
                          'flow-count       ')
@@ -214,35 +214,50 @@ class ryuRestFirewall(rest_firewall.RestFirewallAPI):
         if str(ev.msg.datapath.id) not in self.report:
             self.report[str(ev.msg.datapath.id)] = {}
         self.report[str(ev.msg.datapath.id)]["FlowStats"] = {}
-        try:
-            for stat in sorted([flow for flow in body if flow.priority == 1],
-                            key=lambda flow: (flow.match['in_port'],
-                                                flow.match['eth_dst'])):
-                flow = str(stat.match['in_port'])+"_"+str(stat.match['eth_dst'])
-                self.report[str(ev.msg.datapath.id)]["FlowStats"][flow] = {}
-                self.report[str(ev.msg.datapath.id)]["FlowStats"][flow]["in_port"] = stat.match['in_port']
-                self.report[str(ev.msg.datapath.id)]["FlowStats"][flow]["eth_dst"] = stat.match['eth_dst']
-                self.report[str(ev.msg.datapath.id)]["FlowStats"][flow]["out_port"] = stat.instructions[0].actions[0].port
-                self.report[str(ev.msg.datapath.id)]["FlowStats"][flow]["packet_count"] = stat.packet_count
-                self.report[str(ev.msg.datapath.id)]["FlowStats"][flow]["byte_count"] = stat.byte_count
-        except:
-            print("error in get flow stats")
+        for stat in body:
+            if stat.priority == 1:
+                try:
+                    flow = str(stat.match['in_port'])+"_"+str(stat.match['eth_dst'])
+                    self.report[str(ev.msg.datapath.id)]["FlowStats"][flow] = {}
+                    self.report[str(ev.msg.datapath.id)]["FlowStats"][flow]["in_port"] = stat.match['in_port']
+                    self.report[str(ev.msg.datapath.id)]["FlowStats"][flow]["eth_dst"] = stat.match['eth_dst']
+                    self.report[str(ev.msg.datapath.id)]["FlowStats"][flow]["out_port"] = stat.instructions[0].actions[0].port
+                    self.report[str(ev.msg.datapath.id)]["FlowStats"][flow]["packet_count"] = stat.packet_count
+                    self.report[str(ev.msg.datapath.id)]["FlowStats"][flow]["byte_count"] = stat.byte_count
+                except:
+                    self.logger.debug("Flow not exist")
+        #             print("Flow not exist")
+        # # try:
+        #     for stat in sorted([flow for flow in body if flow.priority == 1],
+        #                     key=lambda flow: (flow.match['in_port'],
+        #                                         flow.match['eth_dst'])):
+        #         flow = str(stat.match['in_port'])+"_"+str(stat.match['eth_dst'])
+        #         self.report[str(ev.msg.datapath.id)]["FlowStats"][flow] = {}
+        #         self.report[str(ev.msg.datapath.id)]["FlowStats"][flow]["in_port"] = stat.match['in_port']
+        #         self.report[str(ev.msg.datapath.id)]["FlowStats"][flow]["eth_dst"] = stat.match['eth_dst']
+        #         self.report[str(ev.msg.datapath.id)]["FlowStats"][flow]["out_port"] = stat.instructions[0].actions[0].port
+        #         self.report[str(ev.msg.datapath.id)]["FlowStats"][flow]["packet_count"] = stat.packet_count
+        #         self.report[str(ev.msg.datapath.id)]["FlowStats"][flow]["byte_count"] = stat.byte_count
+        # except:
+        #     print("error in get flow stats")
         self.lock.release()
 
-        self.logger.info('\ndatapath         '
+        self.logger.info('datapath         '
                          'in-port  eth-dst           '
                          'out-port packets  bytes')
         self.logger.info('---------------- '
                          '-------- ----------------- '
                          '-------- -------- --------')
-        for stat in sorted([flow for flow in body if flow.priority == 1],
-                           key=lambda flow: (flow.match['in_port'],
-                                             flow.match['eth_dst'])):
-            self.logger.info('%016x %8x %17s %8x %8d %8d',
-                             ev.msg.datapath.id,
-                             stat.match['in_port'], stat.match['eth_dst'],
-                             stat.instructions[0].actions[0].port,
-                             stat.packet_count, stat.byte_count)
+        for stat in body:
+            try:
+                self.logger.info('%016x %8x %17s %8x %8d %8d',
+                                ev.msg.datapath.id,
+                                stat.match['in_port'], stat.match['eth_dst'],
+                                stat.instructions[0].actions[0].port,
+                                stat.packet_count, stat.byte_count)
+            except:
+                self.logger.debug("Flow not exist")
+                # print("Flow not exist")
 
     @set_ev_cls(ofp_event.EventOFPPortStatsReply, MAIN_DISPATCHER)
     def _port_stats_reply_handler(self, ev):
@@ -267,7 +282,7 @@ class ryuRestFirewall(rest_firewall.RestFirewallAPI):
 
 
 
-        self.logger.info('\ndatapath         port     '
+        self.logger.info('datapath         port     '
                          'rx-pkts  rx-bytes rx-error '
                          'tx-pkts  tx-bytes tx-error')
         self.logger.info('---------------- -------- '

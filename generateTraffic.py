@@ -15,6 +15,7 @@ import time, argparse, pathlib
 import sys, os
 import re
 import numpy as np
+from soarUtils import *
 
 current_path = str(pathlib.Path(__file__).parent.absolute())
 logging.basicConfig(format='%(asctime)s:%(levelname)s -- %(message)s', level=logging.INFO)
@@ -107,7 +108,7 @@ def h2hTraffic(**kwargs):
                     bandwidth = str(int(row_data["flow"]))+"K"
                     generate_custom_traffic(src=source, dst= net.get(str("opcuagw")), bandwith=bandwidth, log=log_dir)
             # Wait for flow end
-            time.sleep(1)
+            time.sleep(15)
         except Exception as e:
             logging.error("Error in h2hTraffic: {}".format(e))
 
@@ -119,6 +120,8 @@ def generate_traffic(net, data_path, log_dir):
     hosts = net.hosts
     # dictionary storing host's configuration
     host_dict = {}
+    ip_config = {}
+    switch_config = {}
 
     # Get list of data files
     file_list = os.listdir(data_path)
@@ -133,18 +136,23 @@ def generate_traffic(net, data_path, log_dir):
                 host_dict[host_name]["net"] = net
                 host_dict[host_name]["log"] = log_dir
                 host_dict[host_name]["data_path"] = data_path
+                ip_config[host_name] = host_dict[host_name]["host"].IP()
             # Set data file for each host
             if host_name.upper() in str(csvFile):
                 if "MQTT" in str(csvFile):
                     host_dict[host_name]["mqtt"] = csvFile
                 if "OPC-UA" in str(csvFile):
                     host_dict[host_name]["opc"] = csvFile
-    
+    to_yaml('ip_config.yml', ip_config)
+    switches = net.switches
+    for switch in switches:
+        switch_config[switch.dpid] = switch.name
+    print(switch_config)
+    to_yaml('switch_config.yml', switch_config)
     # Generate traffic in sub-thread from each host
     for host in host_dict:
         thread_i = Thread(target=h2hTraffic, kwargs=(host_dict[host]))
         thread_i.start()
-        thread_i.join()
     
     time.sleep(10)
     info("Stopping traffic...\n")
