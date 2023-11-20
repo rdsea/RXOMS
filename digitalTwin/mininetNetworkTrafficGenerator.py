@@ -20,7 +20,7 @@ logging.basicConfig(format='%(asctime)s:%(levelname)s -- %(message)s', level=log
 # Main function
 if __name__ == "__main__":
     # Loading default parameter values
-    parser = argparse.ArgumentParser(description="Processing SINDIT Data")
+    parser = argparse.ArgumentParser(description="Generate Mininet Traffic")
     parser.add_argument('--log', help='category file', default="/log/")
     parser.add_argument('--ctr', help='controller IP', default="127.0.0.1")
     parser.add_argument('--ctrp', help='controller port', default=6633)

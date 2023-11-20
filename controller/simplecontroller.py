@@ -21,12 +21,12 @@ from ryu.controller.handler import MAIN_DISPATCHER, DEAD_DISPATCHER
 from ryu.controller.handler import set_ev_cls
 from ryu.lib import hub
 from qoa4ml.QoaClient import QoaClient
-from qoa4ml import utils
+from qoa4ml import qoaUtils
 from threading import Lock
 
-lib_path = utils.get_parent_dir(__file__,1)
+lib_path = qoaUtils.get_parent_dir(__file__,1)
 config_folder = lib_path+"/configuration/"
-config_file = utils.load_config(config_folder+"qoaConfig.json")
+config_file = qoaUtils.load_config(config_folder+"qoaConfig.yaml")
 
 
 class SimpleMonitor13(simple_switch_13.SimpleSwitch13):
@@ -35,9 +35,11 @@ class SimpleMonitor13(simple_switch_13.SimpleSwitch13):
         super(SimpleMonitor13, self).__init__(*args, **kwargs)
         self.report = {}
         self.lock = Lock()
-        self.qoa_client = QoaClient(config_dict=config_file, registration_url=config_file["registration_url"])
+        # self.qoa_client = QoaClient(config_dict=config_file, registration_url=config_file["registration_url"])
+        # print(self.qoa_client.configuration)
         self.datapaths = {}
         self.monitor_thread = hub.spawn(self._monitor)
+        self.log_report = config_file["log_report"]
         
         
 
@@ -61,8 +63,11 @@ class SimpleMonitor13(simple_switch_13.SimpleSwitch13):
             for dp in self.datapaths.values():
                 self._request_stats(dp)
             # self.logger.info(str(self.report))
-            self.qoa_client.report(report=self.report, submit=True)
-            hub.sleep(5)
+            with open(self.log_report, 'a+') as f:
+                if self.report:
+                    f.write(str(self.report)+"\n")
+            # self.qoa_client.report(report=self.report, submit=False)
+            hub.sleep(1)
 
 
     def _request_stats(self, datapath):

@@ -4,8 +4,14 @@ import pandas as pd
 from threading import Thread, Lock
 logging.basicConfig(format='%(asctime)s:%(levelname)s -- %(message)s', level=logging.INFO)
 from soarUtils import to_yaml
+import sys, os
+MLSOAR_PATH = os.getenv("MLSOAR_PATH")
+sys.path.append(MLSOAR_PATH)
+
 
 # Default value
+config_path = MLSOAR_PATH + "/configuration/"
+
 lock_dict = {
     "mqttgw": Lock(),
     "opcuagw": Lock()
@@ -124,12 +130,11 @@ def generate_traffic(net, data_path, log_dir):
                     host_dict[host_name]["mqtt"] = csvFile
                 if "OPC-UA" in str(csvFile):
                     host_dict[host_name]["opc"] = csvFile
-    to_yaml('ip_config.yml', ip_config)
+    to_yaml(config_path+'ip_config.yml', ip_config)
     switches = net.switches
     for switch in switches:
         switch_config[switch.dpid] = switch.name
-    print(switch_config)
-    to_yaml('switch_config.yml', switch_config)
+    to_yaml(config_path+'switch_config.yml', switch_config)
     # Generate traffic in sub-thread from each host
     for host in host_dict:
         thread_i = Thread(target=h2hTraffic, kwargs=(host_dict[host]))
