@@ -99,7 +99,7 @@ class SimpleMonitor13(simple_switch_13.SimpleSwitch13):
         self.report[str(ev.msg.datapath.id)]["Aggregate"]["flow_count"] = body.flow_count
         self.lock.release()
 
-        self.logger.info('\ndatapath         '
+        self.logger.info('datapath         '
                          'byte-count       '
                          'packet-count     '
                          'flow-count       ')
@@ -134,7 +134,7 @@ class SimpleMonitor13(simple_switch_13.SimpleSwitch13):
             self.report[str(ev.msg.datapath.id)]["FlowStats"][flow]["byte_count"] = stat.byte_count
         self.lock.release()
 
-        self.logger.info('\ndatapath         '
+        self.logger.info('datapath         '
                          'in-port  eth-dst           '
                          'out-port packets  bytes')
         self.logger.info('---------------- '
@@ -172,7 +172,7 @@ class SimpleMonitor13(simple_switch_13.SimpleSwitch13):
 
 
 
-        self.logger.info('\ndatapath         port     '
+        self.logger.info('datapath         port     '
                          'rx-pkts  rx-bytes rx-error '
                          'tx-pkts  tx-bytes tx-error')
         self.logger.info('---------------- -------- '

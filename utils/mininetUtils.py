@@ -92,7 +92,7 @@ def h2hTraffic(**kwargs):
                     bandwidth = str(int(row_data["flow"]))+"K"
                     generate_custom_traffic(src=source, dst= net.get(str("opcuagw")), bandwith=bandwidth, log=log_dir)
             # Wait for flow end
-            time.sleep(1)
+            time.sleep(15)
         except Exception as e:
             logging.error("Error in h2hTraffic: {}".format(e))
 
