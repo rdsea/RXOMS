@@ -1,0 +1,10 @@
+client:
+  appID: 187c5a9b-c4ae-46b2-8a5e-d4f7574176c3
+  appName: sdn
+  instanceID: rohe_test_isntance
+  method: rohe_test_method
+  role: rohe_test_role
+  runID: experiment1
+  stageID: rohe_test_stage
+  userID: aaltosea1
+registration_url: http://localhost:5010/registration

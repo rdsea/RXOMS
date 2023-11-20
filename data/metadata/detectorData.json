@@ -1,0 +1,44 @@
+{
+    "a6a7e044-7ea9-409b-b72a-cbcba4aafb11":{
+        "detectorName":"sdn_local_outlier_factor",
+        "metadata": {},
+        "configHistory":{
+            "1699432921.582888":{
+                "window": 100,
+                "interval": 1
+            },
+            "1699432990.235195":{
+                "window": 50,
+                "interval": 2
+            }
+        }
+    },
+    "85fa8532-5086-4284-9d46-33acd6f08e0f":{
+        "detectorName":"sdn_local_outlier_factor",
+        "metadata": {},
+        "configHistory":{
+            "1699432921.582888":{
+                "window": 200,
+                "interval": 3
+            },
+            "1699432990.235195":{
+                "window": 50,
+                "interval": 10
+            }
+        }
+    },
+    "0d9dc5a5-15b9-44ce-8d36-9594e37ee644":{
+        "detectorName":"sdn_isolation_forest",
+        "metadata": {},
+        "configHistory":{
+            "1699432921.582888":{
+                "window": 100,
+                "interval": 1
+            },
+            "1699432990.235195":{
+                "window": 50,
+                "interval": 2
+            }
+        }
+    }
+}

@@ -1,4 +1,4 @@
-from qoa4ml import utils
+from qoa4ml import qoaUtils as utils
 from qoa4ml.collector.amqp_collector import Amqp_Collector
 import sys, argparse
 lib_path = utils.get_parent_dir(__file__,2)

@@ -1,0 +1,58 @@
+{
+    "T1498":{
+        "incidentName": "Network_Denial_of_Service",
+        "tatic": "impact",
+        "impactType": "availability",
+        "created": "1555491710",
+        "lastModified": "1648198910",
+        "subTechniques": ["T1498.001","T1498.002"]
+    },
+    "T1498.001":{
+        "incidentName": "Network_Denial_of_Service_Direct_Network_Flood",
+        "tatic": "impact",
+        "impactType": "availability",
+        "created": "1583139710",
+        "lastModified": "1680166910",
+        "subTechniques": []
+    },
+    "T1498.002":{
+        "incidentName": "Network_Denial_of_Service_Reflection_Amplication",
+        "tatic": "impact",
+        "impactType": "availability",
+        "created": "1583139710",
+        "lastModified": "1680166910",
+        "subTechniques": []
+    },
+    "T1565":{
+        "incidentName": "Data_Manipulation",
+        "tatic": "impact",
+        "impactType": "integrity",
+        "created": "1583139710",
+        "lastModified": "1681894910",
+        "subTechniques": ["T1565.001","T1565.002","T1565.003"]
+    },
+    "T1565.001":{
+        "incidentName": "Data_Manipulation_Stored_Data_Manipulation",
+        "tatic": "impact",
+        "impactType": "integrity",
+        "created": "1583139710",
+        "lastModified": "1681894910",
+        "subTechniques": []
+    },
+    "T1565.002":{
+        "incidentName": "Data_Manipulation_Transmitted_Data_Manipulation",
+        "tatic": "impact",
+        "impactType": "integrity",
+        "created": "1583139710",
+        "lastModified": "1681894910",
+        "subTechniques": []
+    },
+    "T1565.003":{
+        "incidentName": "Data_Manipulation_Runtime_Data_Manipulation",
+        "tatic": "impact",
+        "impactType": "integrity",
+        "created": "1583139710",
+        "lastModified": "1679734910",
+        "subTechniques": []
+    }
+}

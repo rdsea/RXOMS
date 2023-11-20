@@ -18,7 +18,7 @@ class SinditTopo( Topo ):
         host_dps = self.addHost( 'dps' )
         host_vgr = self.addHost( 'vgr' )
         mqtt_gateway = self.addHost( 'mqttgw' )
-        opcua_gateway = self.addHost( 'ocpuagw' )
+        opcua_gateway = self.addHost( 'opcuagw' )
         ip_config['ssc'] = host_ssc.IP()
         ip_config['mpo'] = host_mpo.IP()
         ip_config['sld'] = host_sld.IP()
@@ -26,7 +26,7 @@ class SinditTopo( Topo ):
         ip_config['dps'] = host_dps.IP()
         ip_config['vgr'] = host_vgr.IP()
         ip_config['mqttgw'] = mqtt_gateway.IP()
-        ip_config['ocpuagw'] = opcua_gateway.IP()
+        ip_config['opcuagw'] = opcua_gateway.IP()
         mqtt_switch = self.addSwitch('s1')
         opcua_switch = self.addSwitch('s2')
         with open('ip_config.yml', 'w') as f:

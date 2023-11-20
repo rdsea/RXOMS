@@ -63,7 +63,7 @@
       "flow_count": 1
     },
     "metadata": {
-      "client_id": "aaltosea1",
+      "userID": "aaltosea1",
       "instance_name": "ryu_controller",
       "stage_id": "controller",
       "method": "sdn",
