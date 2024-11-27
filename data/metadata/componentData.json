@@ -1,0 +1,92 @@
+{
+  "240df9bd-b428-4ccf-a785-60f35f9fb401": {
+    "componentName": "mpo",
+    "description": "Multi_Processing_Station",
+    "last_update": "1699430743.198369",
+    "networkConfig": {
+      "mqtt": {
+        "configID": "eab2ef51-4ca0-4a5a-bb57-3a9ec6411edf",
+        "description": "mqtt_interface",
+        "last_update": "1699430743.198369",
+        "portID": "1",
+        "switchID": "s1"
+      }
+    },
+    "status": "running"
+  },
+  "2cd86778-7b3b-4f50-ad5b-6b9fbd115dad": {
+    "componentName": "sld",
+    "description": "Sorting_Line",
+    "last_update": "1699430743.198369",
+    "networkConfig": {
+      "mqtt": {
+        "configID": "d7557b23-7059-404f-b6d1-70874f0024ba",
+        "description": "mqtt_interface",
+        "last_update": "1699430743.198369",
+        "portID": "2",
+        "switchID": "s1"
+      }
+    },
+    "status": "running"
+  },
+  "38016e75-e1e1-4c41-a289-a51182ab5cb8": {
+    "componentName": "dps",
+    "description": "Delivery_and_Pickup",
+    "last_update": "1699430743.198369",
+    "networkConfig": {
+      "mqtt": {
+        "configID": "736a5a88-2064-48f9-9c37-723e92d384b5",
+        "description": "mqtt_interface",
+        "last_update": "1699430743.198369",
+        "portID": "3",
+        "switchID": "s1"
+      }
+    },
+    "status": "running"
+  },
+  "382a452a-69f4-40f4-a34d-d32b2d2b2b47": {
+    "componentName": "ssc",
+    "description": "Sensor_Unit",
+    "last_update": "1699430743.198369",
+    "networkConfig": {
+      "opcua": {
+        "configID": "2a2f7f5c-5b50-457b-a7bb-6d5dfc17e3ce",
+        "description": "opcua_interface",
+        "last_update": "1699430743.198369",
+        "portID": "3",
+        "switchID": "s2"
+      }
+    },
+    "status": "running"
+  },
+  "64f907e4-f0e8-4fa9-87b6-2052a5667a79": {
+    "componentName": "vgr",
+    "description": "Robot",
+    "last_update": "1699430743.198369",
+    "networkConfig": {
+      "opcua": {
+        "configID": "cf1c62aa-29c7-4b7d-aca4-83366e0ddc29",
+        "description": "opcua_interface",
+        "last_update": "1699430743.198369",
+        "portID": "4",
+        "switchID": "s2"
+      }
+    },
+    "status": "running"
+  },
+  "736a5a88-2064-48f9-9c37-723e92d384b5": {
+    "componentName": "hbw",
+    "description": "HighbayWarehouse",
+    "last_update": "1699430743.198369",
+    "networkConfig": {
+      "opcua": {
+        "configID": "02a88862-2291-49ef-ba1c-f436c2a6f07f",
+        "description": "opcua_interface",
+        "last_update": "1699430743.198369",
+        "portID": "5",
+        "switchID": "s2"
+      }
+    },
+    "status": "running"
+  }
+}

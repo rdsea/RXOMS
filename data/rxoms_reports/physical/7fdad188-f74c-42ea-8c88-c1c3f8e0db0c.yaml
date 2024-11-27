@@ -1,0 +1,50 @@
+anomaly:
+    anomaly_flow:
+        eth_dst: 00:00:00:00:00:02
+        id: f41e7b58-67d4-4bc1-b728-a81fa6b767f1
+        in_port: 1
+        last_update: 1729164877.0994575
+        mean_byte_count: 21143.196799999998
+        mean_packet_count: 21.451200000000004
+        recent_byte_value: 0
+        recent_packet_value: 0
+        status: normal
+        switch: 2
+    anomaly_result:
+        byte_anomaly: -1
+        packet_anomaly: -1
+    common_metric:
+        byte_count: 0
+        packet_count: 0
+    ml_metric:
+        byte_scores: -0.166666666622222
+        packet_scores: -0.166666666622222
+detector:
+    configuration:
+        interval: 3
+        window: 100
+    detection_time: 1729164880.309269
+    detector_name: sdn_isolation_forest_01
+    id: 0d9dc5a5-15b9-44ce-8d36-9594e37ee644
+    last_update: 1701789631
+    ml_algorithm: isolation_forest
+    performance:
+        FNR: 0.011
+        accuracy: 0.98
+        last_update: 1701789936
+id: 7fdad188-f74c-42ea-8c88-c1c3f8e0db0c
+monitor:
+    application_name: sdn
+    instance_id: rohe_test_isntance
+    monitoring_time: 15
+    stage_id: rohe_test_stage
+    user_id: aaltosea1
+physical_entity:
+    id: hbw
+    ip: 10.0.0.2
+    last_update: 1729164879.695758
+    mac: 00:00:00:00:00:02
+    name: hbw
+    status: attack
+    type: asset
+report_time: 1729164880.3092504

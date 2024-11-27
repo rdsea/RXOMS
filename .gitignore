@@ -1,0 +1,10 @@
+log/*
+*.DS_Store
+*.pyc
+*__pycache__
+*.pptx
+**/env/
+**/setup.md
+.python-version
+*.lock
+data/rxoms_reports/logical/*

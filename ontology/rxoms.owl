@@ -1,0 +1,1143 @@
+@prefix : <http://www.aalto.fi/rxoms#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.aalto.fi/rxoms#> .
+
+<http://www.aalto.fi/rxoms> rdf:type owl:Ontology ;
+                              owl:versionIRI <http://www.aalto.fi/rxoms/0.1> ;
+                              owl:imports <http://rds.posccaesar.org/ontology/lis14/ont/core/1.1-alpha.0> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.aalto.fi/rxoms#affectDevice
+:affectDevice rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Incident ;
+              rdfs:range :NetworkDevice .
+
+
+###  http://www.aalto.fi/rxoms#causedBy
+:causedBy rdf:type owl:ObjectProperty ;
+          rdfs:domain :Incident ;
+          rdfs:range :NetworkDevice .
+
+
+###  http://www.aalto.fi/rxoms#connectedToDevice
+:connectedToDevice rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf <http://rds.posccaesar.org/ontology/lis14/rdl/connectedTo> ;
+                   rdfs:domain :Port ;
+                   rdfs:range :NetworkDevice .
+
+
+###  http://www.aalto.fi/rxoms#hasConfiguration
+:hasConfiguration rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdfs:domain :SecurityTool ;
+                  rdfs:range :Configuration .
+
+
+###  http://www.aalto.fi/rxoms#hasDictionaryItem
+:hasDictionaryItem rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:domain :Dictionary ;
+                   rdfs:range :DictionaryItem .
+
+
+###  http://www.aalto.fi/rxoms#hasIPAddress
+:hasIPAddress rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :NetworkDevice ;
+              rdfs:range :IPAddress .
+
+
+###  http://www.aalto.fi/rxoms#hasMLModel
+:hasMLModel rdf:type owl:ObjectProperty ;
+            rdfs:domain :SecurityTool ;
+            rdfs:range :MachineLearningModel .
+
+
+###  http://www.aalto.fi/rxoms#hasMitigation
+:hasMitigation rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               owl:inverseOf :mitigates .
+
+
+###  http://www.aalto.fi/rxoms#hasPerformance
+:hasPerformance rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :MachineLearningModel ;
+                rdfs:range :Performance .
+
+
+###  http://www.aalto.fi/rxoms#hasPort
+:hasPort rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf <http://rds.posccaesar.org/ontology/lis14/rdl/hasPart> ;
+         owl:inverseOf :isPortOf ;
+         rdfs:domain :NetworkDevice ;
+         rdfs:range :Port .
+
+
+###  http://www.aalto.fi/rxoms#hasProtectionRule
+:hasProtectionRule rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:domain :ProtectionService ;
+                   rdfs:range :ProtectionRule .
+
+
+###  http://www.aalto.fi/rxoms#hasTrainingParam
+:hasTrainingParam rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdfs:domain :MachineLearningModel ;
+                  rdfs:range :TrainingParam .
+
+
+###  http://www.aalto.fi/rxoms#isPortOf
+:isPortOf rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf <http://rds.posccaesar.org/ontology/lis14/rdl/partOf> .
+
+
+###  http://www.aalto.fi/rxoms#mitigates
+:mitigates rdf:type owl:ObjectProperty ;
+           rdfs:domain :Mitigation ;
+           rdfs:range :Incident .
+
+
+###  http://www.aalto.fi/rxoms#monitorDevice
+:monitorDevice rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :DectectionService ;
+               rdfs:range :NetworkDevice .
+
+
+###  http://www.aalto.fi/rxoms#protectsDevice
+:protectsDevice rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :ProtectionService ;
+                rdfs:range :NetworkDevice .
+
+
+###  http://www.aalto.fi/rxoms#provideAPI
+:provideAPI rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :ProtectionService ;
+            rdfs:range :API .
+
+
+###  http://www.aalto.fi/rxoms#serviceOf
+:serviceOf rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain :DectectionService ,
+                       :ProtectionService ;
+           rdfs:range :SecurityTool .
+
+
+###  http://www.aalto.fi/rxoms#subTechniques
+:subTechniques rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :Incident ;
+               rdfs:range :Incident .
+
+
+###  http://www.aalto.fi/rxoms#useAPI
+:useAPI rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdfs:domain :Mitigation ;
+        rdfs:range :API .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.aalto.fi/rxoms#created
+:created rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:range xsd:long .
+
+
+###  http://www.aalto.fi/rxoms#hasDictionaryKey
+:hasDictionaryKey rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdfs:domain :DictionaryItem .
+
+
+###  http://www.aalto.fi/rxoms#hasDictionaryValue
+:hasDictionaryValue rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdfs:domain :DictionaryItem .
+
+
+###  http://www.aalto.fi/rxoms#hasFunction
+:hasFunction rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :API ;
+             rdfs:range xsd:string .
+
+
+###  http://www.aalto.fi/rxoms#hasFunctionParams
+:hasFunctionParams rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:domain :API ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.aalto.fi/rxoms#hasIPv4Address
+:hasIPv4Address rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain :IPAddress ;
+                rdfs:range xsd:string .
+
+
+###  http://www.aalto.fi/rxoms#hasIPv6Address
+:hasIPv6Address rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain :IPAddress ;
+                rdfs:range xsd:string .
+
+
+###  http://www.aalto.fi/rxoms#hasModule
+:hasModule rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :API ;
+           rdfs:range xsd:string .
+
+
+###  http://www.aalto.fi/rxoms#hasName
+:hasName rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:range xsd:string .
+
+
+###  http://www.aalto.fi/rxoms#hasPortNumber
+:hasPortNumber rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :Port ;
+               rdfs:range xsd:integer .
+
+
+###  http://www.aalto.fi/rxoms#hasStatusCode
+:hasStatusCode rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :NetworkDevice ;
+               rdfs:range xsd:integer .
+
+
+###  http://www.aalto.fi/rxoms#impactType
+:impactType rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :Incident ;
+            rdfs:range xsd:string .
+
+
+###  http://www.aalto.fi/rxoms#incidentName
+:incidentName rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :Incident ;
+              rdfs:range xsd:string .
+
+
+###  http://www.aalto.fi/rxoms#lastModified
+:lastModified rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:range xsd:long .
+
+
+###  http://www.aalto.fi/rxoms#tatic
+:tatic rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdfs:domain :Incident ;
+       rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.aalto.fi/rxoms#API
+:API rdf:type owl:Class ;
+     rdfs:subClassOf <http://rds.posccaesar.org/ontology/lis14/rdl/InformationObject> .
+
+
+###  http://www.aalto.fi/rxoms#Configuration
+:Configuration rdf:type owl:Class ;
+               rdfs:subClassOf <http://rds.posccaesar.org/ontology/lis14/rdl/InformationObject> .
+
+
+###  http://www.aalto.fi/rxoms#DectectionService
+:DectectionService rdf:type owl:Class ;
+                   rdfs:subClassOf <http://rds.posccaesar.org/ontology/lis14/rdl/SoftwareArtefact> ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :monitorDevice ;
+                                     owl:someValuesFrom :NetworkDevice
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :serviceOf ;
+                                     owl:someValuesFrom :SecurityTool
+                                   ] ;
+                   owl:disjointWith :ProtectionService .
+
+
+###  http://www.aalto.fi/rxoms#Dictionary
+:Dictionary rdf:type owl:Class ;
+            rdfs:subClassOf <http://rds.posccaesar.org/ontology/lis14/rdl/InformationObject> ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasDictionaryItem ;
+                              owl:someValuesFrom :DictionaryItem
+                            ] .
+
+
+###  http://www.aalto.fi/rxoms#DictionaryConfiguration
+:DictionaryConfiguration rdf:type owl:Class ;
+                         rdfs:subClassOf :Configuration ,
+                                         :Dictionary .
+
+
+###  http://www.aalto.fi/rxoms#DictionaryItem
+:DictionaryItem rdf:type owl:Class ;
+                rdfs:subClassOf <http://rds.posccaesar.org/ontology/lis14/rdl/InformationObject> .
+
+
+###  http://www.aalto.fi/rxoms#Gateway
+:Gateway rdf:type owl:Class ;
+         rdfs:subClassOf :NetworkDevice .
+
+
+###  http://www.aalto.fi/rxoms#Host
+:Host rdf:type owl:Class ;
+      rdfs:subClassOf :NetworkConfiguration .
+
+
+###  http://www.aalto.fi/rxoms#IPAddress
+:IPAddress rdf:type owl:Class ;
+           rdfs:subClassOf :NetworkConfiguration .
+
+
+###  http://www.aalto.fi/rxoms#Incident
+:Incident rdf:type owl:Class ;
+          rdfs:subClassOf <http://rds.posccaesar.org/ontology/lis14/rdl/Event> .
+
+
+###  http://www.aalto.fi/rxoms#MachineLearningModel
+:MachineLearningModel rdf:type owl:Class ;
+                      rdfs:subClassOf <http://rds.posccaesar.org/ontology/lis14/rdl/SoftwareArtefact> ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasConfiguration ;
+                                        owl:someValuesFrom :Configuration
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasPerformance ;
+                                        owl:someValuesFrom :Performance
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasTrainingParam ;
+                                        owl:someValuesFrom :TrainingParam
+                                      ] .
+
+
+###  http://www.aalto.fi/rxoms#Mitigation
+:Mitigation rdf:type owl:Class ;
+            rdfs:subClassOf <http://rds.posccaesar.org/ontology/lis14/rdl/InformationObject> .
+
+
+###  http://www.aalto.fi/rxoms#NetworkConfiguration
+:NetworkConfiguration rdf:type owl:Class ;
+                      rdfs:subClassOf :Configuration .
+
+
+###  http://www.aalto.fi/rxoms#NetworkDevice
+:NetworkDevice rdf:type owl:Class ;
+               rdfs:subClassOf <http://rds.posccaesar.org/ontology/lis14/rdl/PhysicalObject> ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasIPv4Address ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:string
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasIPv6Address ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:string
+                               ] .
+
+
+###  http://www.aalto.fi/rxoms#Performance
+:Performance rdf:type owl:Class ;
+             rdfs:subClassOf :Dictionary .
+
+
+###  http://www.aalto.fi/rxoms#Port
+:Port rdf:type owl:Class ;
+      rdfs:subClassOf :NetworkConfiguration ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :connectedToDevice ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :NetworkDevice
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasPortNumber ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onDataRange xsd:integer
+                      ] .
+
+
+###  http://www.aalto.fi/rxoms#Process
+:Process rdf:type owl:Class ;
+         rdfs:subClassOf :NetworkConfiguration .
+
+
+###  http://www.aalto.fi/rxoms#Program
+:Program rdf:type owl:Class ;
+         rdfs:subClassOf :NetworkConfiguration .
+
+
+###  http://www.aalto.fi/rxoms#ProtectionRule
+:ProtectionRule rdf:type owl:Class ;
+                rdfs:subClassOf :DictionaryConfiguration .
+
+
+###  http://www.aalto.fi/rxoms#ProtectionService
+:ProtectionService rdf:type owl:Class ;
+                   rdfs:subClassOf <http://rds.posccaesar.org/ontology/lis14/rdl/SoftwareArtefact> ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasConfiguration ;
+                                     owl:someValuesFrom :Configuration
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasProtectionRule ;
+                                     owl:someValuesFrom :ProtectionRule
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :protectsDevice ;
+                                     owl:someValuesFrom :NetworkDevice
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :serviceOf ;
+                                     owl:someValuesFrom :SecurityTool
+                                   ] .
+
+
+###  http://www.aalto.fi/rxoms#SecurityTool
+:SecurityTool rdf:type owl:Class ;
+              rdfs:subClassOf <http://rds.posccaesar.org/ontology/lis14/rdl/SoftwareArtefact> ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasConfiguration ;
+                                owl:someValuesFrom :Configuration
+                              ] .
+
+
+###  http://www.aalto.fi/rxoms#Service
+:Service rdf:type owl:Class ;
+         rdfs:subClassOf :NetworkConfiguration .
+
+
+###  http://www.aalto.fi/rxoms#Switch
+:Switch rdf:type owl:Class ;
+        rdfs:subClassOf :NetworkDevice .
+
+
+###  http://www.aalto.fi/rxoms#TrainingParam
+:TrainingParam rdf:type owl:Class ;
+               rdfs:subClassOf :DictionaryConfiguration .
+
+
+###  http://www.aalto.fi/rxoms#User
+:User rdf:type owl:Class ;
+      rdfs:subClassOf :NetworkConfiguration .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.aalto.fi/rxoms#A1022
+:A1022 rdf:type owl:NamedIndividual ,
+                :API ;
+       :hasFunction "fileRestriction" ;
+       :hasFunctionParams "[\"fileUrl\", \"permission\"]" ;
+       :hasModule "securityProtection" .
+
+
+###  http://www.aalto.fi/rxoms#A1029
+:A1029 rdf:type owl:NamedIndividual ,
+                :API ;
+       :hasFunction "remoteDataStorage" ;
+       :hasFunctionParams "[\"storageUrl\", \"actions\"]" ;
+       :hasModule "securityProtection" .
+
+
+###  http://www.aalto.fi/rxoms#A1030
+:A1030 rdf:type owl:NamedIndividual ,
+                :API ;
+       :hasFunction "networkSegmentation" ;
+       :hasFunctionParams "[\"switchID\", \"nw_proto\", \"actions\"]" ;
+       :hasModule "securityProtection" .
+
+
+###  http://www.aalto.fi/rxoms#A1037
+:A1037 rdf:type owl:NamedIndividual ,
+                :API ;
+       :hasFunction "firewallFilter" ;
+       :hasFunctionParams "[\"switchID\", \"nw_proto\", \"dl_type\", \"nw_src\", \"nw_dst\", \"actions\"]" ;
+       :hasModule "securityProtection" .
+
+
+###  http://www.aalto.fi/rxoms#A1041
+:A1041 rdf:type owl:NamedIndividual ,
+                :API ;
+       :hasFunction "encryptData" ;
+       :hasFunctionParams "[\"method\", \"key\", \"condition\"]" ;
+       :hasModule "securityProtection" .
+
+
+###  http://www.aalto.fi/rxoms#DPS
+:DPS rdf:type owl:NamedIndividual ,
+              :NetworkDevice ;
+     :hasIPAddress :DPS_IP ;
+     rdfs:label "DPS" .
+
+
+###  http://www.aalto.fi/rxoms#DPS_IP
+:DPS_IP rdf:type owl:NamedIndividual ,
+                 :IPAddress ;
+        :hasIPv4Address "10.0.0.1" .
+
+
+###  http://www.aalto.fi/rxoms#HBW
+:HBW rdf:type owl:NamedIndividual ,
+              :NetworkDevice ;
+     :hasIPAddress :HBW_IP ;
+     rdfs:label "HBW" .
+
+
+###  http://www.aalto.fi/rxoms#HBW_IP
+:HBW_IP rdf:type owl:NamedIndividual ,
+                 :IPAddress ;
+        :hasIPv4Address "10.0.0.2" .
+
+
+###  http://www.aalto.fi/rxoms#M1022
+:M1022 rdf:type owl:NamedIndividual ,
+                :Mitigation ;
+       :mitigates :T1565.001_1 ,
+                  :T1565.003_1 ,
+                  :T1565_1 .
+
+
+###  http://www.aalto.fi/rxoms#M1029
+:M1029 rdf:type owl:NamedIndividual ,
+                :Mitigation ;
+       :mitigates :T1565.001_1 ,
+                  :T1565_1 ;
+       :useAPI :A1029 .
+
+
+###  http://www.aalto.fi/rxoms#M1030
+:M1030 rdf:type owl:NamedIndividual ,
+                :Mitigation ;
+       :mitigates :T1498.001_1 ;
+       :useAPI :A1030 .
+
+
+###  http://www.aalto.fi/rxoms#M1037
+:M1037 rdf:type owl:NamedIndividual ,
+                :Mitigation ;
+       :mitigates :T1565.003_1 ,
+                  :T1565_1 ;
+       :useAPI :A1037 .
+
+
+###  http://www.aalto.fi/rxoms#M1041
+:M1041 rdf:type owl:NamedIndividual ,
+                :Mitigation ;
+       :mitigates :T1565.001_1 ,
+                  :T1565.002_1 ,
+                  :T1565_1 ;
+       :useAPI :A1041 .
+
+
+###  http://www.aalto.fi/rxoms#MPO
+:MPO rdf:type owl:NamedIndividual ,
+              :NetworkDevice ;
+     :hasIPAddress :MPO_IP ;
+     rdfs:label "MPO" .
+
+
+###  http://www.aalto.fi/rxoms#MPO_IP
+:MPO_IP rdf:type owl:NamedIndividual ,
+                 :IPAddress ;
+        :hasIPv4Address "10.0.0.3" .
+
+
+###  http://www.aalto.fi/rxoms#MQTT_GW
+:MQTT_GW rdf:type owl:NamedIndividual ,
+                  :Gateway ;
+         :hasIPAddress :MQTT_GW_IP ;
+         rdfs:label "MQTT_GW" .
+
+
+###  http://www.aalto.fi/rxoms#MQTT_GW_IP
+:MQTT_GW_IP rdf:type owl:NamedIndividual ,
+                     :IPAddress ;
+            :hasIPv4Address "10.0.0.4" .
+
+
+###  http://www.aalto.fi/rxoms#OPCUA_GW
+:OPCUA_GW rdf:type owl:NamedIndividual ,
+                   :Gateway ;
+          :hasIPAddress :OPCUA_GW_IP ;
+          rdfs:label "OPCUA_GW" .
+
+
+###  http://www.aalto.fi/rxoms#OPCUA_GW_IP
+:OPCUA_GW_IP rdf:type owl:NamedIndividual ,
+                      :IPAddress ;
+             :hasIPv4Address "10.0.0.5" .
+
+
+###  http://www.aalto.fi/rxoms#SCC
+:SCC rdf:type owl:NamedIndividual ,
+              :NetworkDevice ;
+     :hasIPAddress :SCC_IP ;
+     rdfs:label "SCC" .
+
+
+###  http://www.aalto.fi/rxoms#SCC_IP
+:SCC_IP rdf:type owl:NamedIndividual ,
+                 :IPAddress ;
+        :hasIPv4Address "10.0.0.7" .
+
+
+###  http://www.aalto.fi/rxoms#SLD
+:SLD rdf:type owl:NamedIndividual ,
+              :NetworkDevice ;
+     :hasIPAddress :SLD_IP ;
+     rdfs:label "SLD" .
+
+
+###  http://www.aalto.fi/rxoms#SLD_IP
+:SLD_IP rdf:type owl:NamedIndividual ,
+                 :IPAddress ;
+        :hasIPv4Address "10.0.0.6" .
+
+
+###  http://www.aalto.fi/rxoms#Switch1
+:Switch1 rdf:type owl:NamedIndividual ,
+                  :Switch ;
+         :hasPort :Switch1_Port1 ,
+                  :Switch1_Port2 ,
+                  :Switch1_Port3 ,
+                  :Switch1_Port4 ,
+                  :Switch1_Port5 ;
+         rdfs:label "Switch1" .
+
+
+###  http://www.aalto.fi/rxoms#Switch1_Port1
+:Switch1_Port1 rdf:type owl:NamedIndividual ,
+                        :Port ;
+               :connectedToDevice :MPO ;
+               :hasPortNumber 1 .
+
+
+###  http://www.aalto.fi/rxoms#Switch1_Port2
+:Switch1_Port2 rdf:type owl:NamedIndividual ,
+                        :Port ;
+               :connectedToDevice :SLD ;
+               :hasPortNumber 2 .
+
+
+###  http://www.aalto.fi/rxoms#Switch1_Port3
+:Switch1_Port3 rdf:type owl:NamedIndividual ,
+                        :Port ;
+               :connectedToDevice :DPS ;
+               :hasPortNumber 3 .
+
+
+###  http://www.aalto.fi/rxoms#Switch1_Port4
+:Switch1_Port4 rdf:type owl:NamedIndividual ,
+                        :Port ;
+               :connectedToDevice :MQTT_GW ;
+               :hasPortNumber 4 .
+
+
+###  http://www.aalto.fi/rxoms#Switch1_Port5
+:Switch1_Port5 rdf:type owl:NamedIndividual ,
+                        :Port ;
+               :connectedToDevice :Switch2 ;
+               :hasPortNumber 5 .
+
+
+###  http://www.aalto.fi/rxoms#Switch2
+:Switch2 rdf:type owl:NamedIndividual ,
+                  :Switch ;
+         :hasPort :Switch2_Port1 ,
+                  :Switch2_Port2 ,
+                  :Switch2_Port3 ,
+                  :Switch2_Port4 ,
+                  :Switch2_Port5 ;
+         rdfs:label "Switch2" .
+
+
+###  http://www.aalto.fi/rxoms#Switch2_Port1
+:Switch2_Port1 rdf:type owl:NamedIndividual ,
+                        :Port ;
+               :connectedToDevice :OPCUA_GW ;
+               :hasPortNumber 1 .
+
+
+###  http://www.aalto.fi/rxoms#Switch2_Port2
+:Switch2_Port2 rdf:type owl:NamedIndividual ,
+                        :Port ;
+               :connectedToDevice :Switch2 ;
+               :hasPortNumber 2 .
+
+
+###  http://www.aalto.fi/rxoms#Switch2_Port3
+:Switch2_Port3 rdf:type owl:NamedIndividual ,
+                        :Port ;
+               :connectedToDevice :SCC ;
+               :hasPortNumber 3 .
+
+
+###  http://www.aalto.fi/rxoms#Switch2_Port4
+:Switch2_Port4 rdf:type owl:NamedIndividual ,
+                        :Port ;
+               :connectedToDevice :VGR ;
+               :hasPortNumber 4 .
+
+
+###  http://www.aalto.fi/rxoms#Switch2_Port5
+:Switch2_Port5 rdf:type owl:NamedIndividual ,
+                        :Port ;
+               :connectedToDevice :HBW ;
+               :hasPortNumber 5 .
+
+
+###  http://www.aalto.fi/rxoms#T1498.001_1
+:T1498.001_1 rdf:type owl:NamedIndividual ,
+                      :Incident ;
+             :created 1583139710 ;
+             :impactType "availability" ;
+             :incidentName "Network_Denial_of_Service_Direct_Network_Flood" ;
+             :lastModified 1680166910 ;
+             :tatic "impact" .
+
+
+###  http://www.aalto.fi/rxoms#T1498.002_1
+:T1498.002_1 rdf:type owl:NamedIndividual ,
+                      :Incident ;
+             :created 1583139710 ;
+             :impactType "availability" ;
+             :incidentName "Network_Denial_of_Service_Reflection_Amplication" ;
+             :lastModified 1680166910 ;
+             :tatic "impact" .
+
+
+###  http://www.aalto.fi/rxoms#T1498_1
+:T1498_1 rdf:type owl:NamedIndividual ,
+                  :Incident ;
+         :subTechniques :T1498.001_1 ,
+                        :T1498.002_1 ;
+         :created 1555491710 ;
+         :impactType "availability" ;
+         :incidentName "Network_Denial_of_Service" ;
+         :lastModified 1648198910 ;
+         :tatic "impact" .
+
+
+###  http://www.aalto.fi/rxoms#T1565.001_1
+:T1565.001_1 rdf:type owl:NamedIndividual ,
+                      :Incident ;
+             :created 1583139710 ;
+             :impactType "integrity" ;
+             :incidentName "Data_Manipulation_Stored_Data_Manipulation" ;
+             :lastModified 1681894910 ;
+             :tatic "impact" .
+
+
+###  http://www.aalto.fi/rxoms#T1565.002_1
+:T1565.002_1 rdf:type owl:NamedIndividual ,
+                      :Incident ;
+             :created 1583139710 ;
+             :impactType "integrity" ;
+             :lastModified 1681894910 ;
+             :tatic "impact" .
+
+
+###  http://www.aalto.fi/rxoms#T1565.003_1
+:T1565.003_1 rdf:type owl:NamedIndividual ,
+                      :Incident ;
+             :created 1583139710 ;
+             :impactType "integrity" ;
+             :incidentName "Data_Manipulation_Runtime_Data_Manipulation" ;
+             :lastModified 1679734910 ;
+             :tatic "impact" .
+
+
+###  http://www.aalto.fi/rxoms#T1565_1
+:T1565_1 rdf:type owl:NamedIndividual ,
+                  :Incident ;
+         :subTechniques :T1565.001_1 ,
+                        :T1565.002_1 ,
+                        :T1565.003_1 ;
+         :created 1555491710 ;
+         :impactType "integrity" ;
+         :incidentName "Data_Manipulation" ;
+         :lastModified 1648198910 ;
+         :tatic "impact" .
+
+
+###  http://www.aalto.fi/rxoms#VGR
+:VGR rdf:type owl:NamedIndividual ,
+              :NetworkDevice ;
+     :hasIPAddress :VGR_IP ;
+     rdfs:label "VGR" .
+
+
+###  http://www.aalto.fi/rxoms#VGR_IP
+:VGR_IP rdf:type owl:NamedIndividual ,
+                 :IPAddress ;
+        :hasIPv4Address "10.0.0.8" .
+
+
+###  http://www.aalto.fi/rxoms#ryu_firewall
+:ryu_firewall rdf:type owl:NamedIndividual ,
+                       :ProtectionService ;
+              :hasConfiguration :ryu_firewall_configuration ;
+              :hasProtectionRule :ryu_firewall_rule1 ,
+                                 :ryu_firewall_rule2 ,
+                                 :ryu_firewall_rule3 ;
+              :protectsDevice :DPS ,
+                              :HBW ,
+                              :MPO ,
+                              :MQTT_GW ,
+                              :OPCUA_GW ,
+                              :SCC ,
+                              :SLD ,
+                              :Switch1 ,
+                              :Switch2 ,
+                              :VGR .
+
+
+###  http://www.aalto.fi/rxoms#ryu_firewall_conf_s1
+:ryu_firewall_conf_s1 rdf:type owl:NamedIndividual ,
+                               :DictionaryItem ;
+                      :hasDictionaryKey "s1" ;
+                      :hasDictionaryValue "enable" .
+
+
+###  http://www.aalto.fi/rxoms#ryu_firewall_conf_s2
+:ryu_firewall_conf_s2 rdf:type owl:NamedIndividual ,
+                               :DictionaryItem ;
+                      :hasDictionaryKey "s2" ;
+                      :hasDictionaryValue "enable" .
+
+
+###  http://www.aalto.fi/rxoms#ryu_firewall_configuration
+:ryu_firewall_configuration rdf:type owl:NamedIndividual ,
+                                     :DictionaryConfiguration ;
+                            :hasDictionaryItem :ryu_firewall_conf_s1 ,
+                                               :ryu_firewall_conf_s2 .
+
+
+###  http://www.aalto.fi/rxoms#ryu_firewall_rule1
+:ryu_firewall_rule1 rdf:type owl:NamedIndividual ,
+                             :ProtectionRule .
+
+
+###  http://www.aalto.fi/rxoms#ryu_firewall_rule1_actions
+:ryu_firewall_rule1_actions rdf:type owl:NamedIndividual ,
+                                     :DictionaryItem ;
+                            :hasDictionaryKey "actions" ;
+                            :hasDictionaryValue "ALLOW" .
+
+
+###  http://www.aalto.fi/rxoms#ryu_firewall_rule1_dl_type
+:ryu_firewall_rule1_dl_type rdf:type owl:NamedIndividual ,
+                                     :DictionaryItem ;
+                            :hasDictionaryKey "dl_type" ;
+                            :hasDictionaryValue "IPv4" .
+
+
+###  http://www.aalto.fi/rxoms#ryu_firewall_rule1_nw_proto
+:ryu_firewall_rule1_nw_proto rdf:type owl:NamedIndividual ,
+                                      :DictionaryItem ;
+                             :hasDictionaryKey "nw_proto" ;
+                             :hasDictionaryValue "tcp" .
+
+
+###  http://www.aalto.fi/rxoms#ryu_firewall_rule2
+:ryu_firewall_rule2 rdf:type owl:NamedIndividual ,
+                             :ProtectionRule .
+
+
+###  http://www.aalto.fi/rxoms#ryu_firewall_rule2_actions
+:ryu_firewall_rule2_actions rdf:type owl:NamedIndividual ,
+                                     :DictionaryItem ;
+                            :hasDictionaryKey "actions" ;
+                            :hasDictionaryValue "ALLOW" .
+
+
+###  http://www.aalto.fi/rxoms#ryu_firewall_rule2_dl_type
+:ryu_firewall_rule2_dl_type rdf:type owl:NamedIndividual ,
+                                     :DictionaryItem ;
+                            :hasDictionaryKey "dl_type" ;
+                            :hasDictionaryValue "IPv4" .
+
+
+###  http://www.aalto.fi/rxoms#ryu_firewall_rule2_nw_proto
+:ryu_firewall_rule2_nw_proto rdf:type owl:NamedIndividual ,
+                                      :DictionaryItem ;
+                             :hasDictionaryKey "nw_proto" ;
+                             :hasDictionaryValue "udp" .
+
+
+###  http://www.aalto.fi/rxoms#ryu_firewall_rule3
+:ryu_firewall_rule3 rdf:type owl:NamedIndividual ,
+                             :ProtectionRule .
+
+
+###  http://www.aalto.fi/rxoms#ryu_firewall_rule3_actions
+:ryu_firewall_rule3_actions rdf:type owl:NamedIndividual ,
+                                     :DictionaryItem ;
+                            :hasDictionaryKey "actions" ;
+                            :hasDictionaryValue "DENY" .
+
+
+###  http://www.aalto.fi/rxoms#ryu_firewall_rule3_dl_type
+:ryu_firewall_rule3_dl_type rdf:type owl:NamedIndividual ,
+                                     :DictionaryItem ;
+                            :hasDictionaryKey "dl_type" ;
+                            :hasDictionaryValue "IPv4" .
+
+
+###  http://www.aalto.fi/rxoms#ryu_firewall_rule3_nw_proto
+:ryu_firewall_rule3_nw_proto rdf:type owl:NamedIndividual ,
+                                      :DictionaryItem ;
+                             :hasDictionaryKey "nw_proto" ;
+                             :hasDictionaryValue "tcp" .
+
+
+###  http://www.aalto.fi/rxoms#ryu_firewall_rule3_nw_src
+:ryu_firewall_rule3_nw_src rdf:type owl:NamedIndividual ,
+                                    :DictionaryItem ;
+                           :hasDictionaryKey "nw_src" ;
+                           :hasDictionaryValue "10.0.0.3" .
+
+
+###  http://www.aalto.fi/rxoms#sdn_isolation_forest
+:sdn_isolation_forest rdf:type owl:NamedIndividual ,
+                               :DectectionService ;
+                      :hasMLModel :sdn_isolation_forest_ml_model ;
+                      :monitorDevice :HBW ,
+                                     :OPCUA_GW ,
+                                     :SCC ,
+                                     :Switch2 ,
+                                     :VGR .
+
+
+###  http://www.aalto.fi/rxoms#sdn_isolation_forest_configuration
+:sdn_isolation_forest_configuration rdf:type owl:NamedIndividual ,
+                                             :DictionaryConfiguration ;
+                                    :hasDictionaryItem :sdn_isolation_forest_configuration_interval ,
+                                                       :sdn_isolation_forest_configuration_window .
+
+
+###  http://www.aalto.fi/rxoms#sdn_isolation_forest_configuration_interval
+:sdn_isolation_forest_configuration_interval rdf:type owl:NamedIndividual ,
+                                                      :DictionaryItem ;
+                                             :hasDictionaryKey "interval" ;
+                                             :hasDictionaryValue 3 .
+
+
+###  http://www.aalto.fi/rxoms#sdn_isolation_forest_configuration_window
+:sdn_isolation_forest_configuration_window rdf:type owl:NamedIndividual ,
+                                                    :DictionaryItem ;
+                                           :hasDictionaryKey "window" ;
+                                           :hasDictionaryValue 100 .
+
+
+###  http://www.aalto.fi/rxoms#sdn_isolation_forest_ml_model
+:sdn_isolation_forest_ml_model rdf:type owl:NamedIndividual ,
+                                        :MachineLearningModel ;
+                               :hasConfiguration :sdn_isolation_forest_configuration ;
+                               :hasPerformance :sdn_isolation_forest_performance ;
+                               :hasTrainingParam :sdn_isolation_forest_training_params .
+
+
+###  http://www.aalto.fi/rxoms#sdn_isolation_forest_performance
+:sdn_isolation_forest_performance rdf:type owl:NamedIndividual ,
+                                           :Performance ;
+                                  :hasDictionaryItem :sdn_isolation_forest_performance_FNR ,
+                                                     :sdn_isolation_forest_performance_accuracy ,
+                                                     :sdn_isolation_forest_performance_lastUpdate .
+
+
+###  http://www.aalto.fi/rxoms#sdn_isolation_forest_performance_FNR
+:sdn_isolation_forest_performance_FNR rdf:type owl:NamedIndividual ,
+                                               :DictionaryItem ;
+                                      :hasDictionaryKey "FNR" ;
+                                      :hasDictionaryValue "0.011"^^xsd:double .
+
+
+###  http://www.aalto.fi/rxoms#sdn_isolation_forest_performance_accuracy
+:sdn_isolation_forest_performance_accuracy rdf:type owl:NamedIndividual ,
+                                                    :DictionaryItem ;
+                                           :hasDictionaryKey "accuracy" ;
+                                           :hasDictionaryValue "0.98"^^xsd:double .
+
+
+###  http://www.aalto.fi/rxoms#sdn_isolation_forest_performance_lastUpdate
+:sdn_isolation_forest_performance_lastUpdate rdf:type owl:NamedIndividual ,
+                                                      :DictionaryItem ;
+                                             :hasDictionaryKey "lastUpdate" ;
+                                             :hasDictionaryValue "1701789936"^^xsd:long .
+
+
+###  http://www.aalto.fi/rxoms#sdn_isolation_forest_training_params
+:sdn_isolation_forest_training_params rdf:type owl:NamedIndividual ,
+                                               :TrainingParam ;
+                                      :hasDictionaryItem :sdn_isolation_forest_training_params_contamination ,
+                                                         :sdn_isolation_forest_training_params_lastTrain ,
+                                                         :sdn_isolation_forest_training_params_random_seed ,
+                                                         :sdn_isolation_forest_training_params_trainingData .
+
+
+###  http://www.aalto.fi/rxoms#sdn_isolation_forest_training_params_contamination
+:sdn_isolation_forest_training_params_contamination rdf:type owl:NamedIndividual ,
+                                                             :DictionaryItem ;
+                                                    :hasDictionaryKey "contamination" ;
+                                                    :hasDictionaryValue "0.05"^^xsd:double .
+
+
+###  http://www.aalto.fi/rxoms#sdn_isolation_forest_training_params_lastTrain
+:sdn_isolation_forest_training_params_lastTrain rdf:type owl:NamedIndividual ,
+                                                         :DictionaryItem ;
+                                                :hasDictionaryKey "lastTrain" ;
+                                                :hasDictionaryValue "1701789631"^^xsd:long .
+
+
+###  http://www.aalto.fi/rxoms#sdn_isolation_forest_training_params_random_seed
+:sdn_isolation_forest_training_params_random_seed rdf:type owl:NamedIndividual ,
+                                                           :DictionaryItem ;
+                                                  :hasDictionaryKey "random_seed" ;
+                                                  :hasDictionaryValue 1 .
+
+
+###  http://www.aalto.fi/rxoms#sdn_isolation_forest_training_params_trainingData
+:sdn_isolation_forest_training_params_trainingData rdf:type owl:NamedIndividual ,
+                                                            :DictionaryItem ;
+                                                   :hasDictionaryKey "trainingData" ;
+                                                   :hasDictionaryValue "aa2c0874-28db-4c4a-8080-af3b0c4c7bd9" .
+
+
+###  http://www.aalto.fi/rxoms#sdn_local_outlier_factor
+:sdn_local_outlier_factor rdf:type owl:NamedIndividual ,
+                                   :DectectionService ;
+                          :hasMLModel :sdn_local_outlier_factor_ml_model ;
+                          :monitorDevice :DPS ,
+                                         :MPO ,
+                                         :MQTT_GW ,
+                                         :SLD ,
+                                         :Switch1 .
+
+
+###  http://www.aalto.fi/rxoms#sdn_local_outlier_factor_configuration
+:sdn_local_outlier_factor_configuration rdf:type owl:NamedIndividual ,
+                                                 :DictionaryConfiguration ;
+                                        :hasDictionaryItem :sdn_local_outlier_factor_configuration_interval ,
+                                                           :sdn_local_outlier_factor_configuration_window .
+
+
+###  http://www.aalto.fi/rxoms#sdn_local_outlier_factor_configuration_interval
+:sdn_local_outlier_factor_configuration_interval rdf:type owl:NamedIndividual ,
+                                                          :DictionaryItem ;
+                                                 :hasDictionaryKey "interval" ;
+                                                 :hasDictionaryValue 3 .
+
+
+###  http://www.aalto.fi/rxoms#sdn_local_outlier_factor_configuration_window
+:sdn_local_outlier_factor_configuration_window rdf:type owl:NamedIndividual ,
+                                                        :DictionaryItem ;
+                                               :hasDictionaryKey "window" ;
+                                               :hasDictionaryValue 100 .
+
+
+###  http://www.aalto.fi/rxoms#sdn_local_outlier_factor_ml_model
+:sdn_local_outlier_factor_ml_model rdf:type owl:NamedIndividual ,
+                                            :MachineLearningModel ;
+                                   :hasConfiguration :sdn_local_outlier_factor_configuration ;
+                                   :hasPerformance :sdn_local_outlier_factor_performance ;
+                                   :hasTrainingParam :sdn_local_outlier_factor_training_params .
+
+
+###  http://www.aalto.fi/rxoms#sdn_local_outlier_factor_performance
+:sdn_local_outlier_factor_performance rdf:type owl:NamedIndividual ,
+                                               :Performance ;
+                                      :hasDictionaryItem :sdn_local_outlier_factor_performance_FNR ,
+                                                         :sdn_local_outlier_factor_performance_accuracy ,
+                                                         :sdn_local_outlier_factor_performance_lastUpdate .
+
+
+###  http://www.aalto.fi/rxoms#sdn_local_outlier_factor_performance_FNR
+:sdn_local_outlier_factor_performance_FNR rdf:type owl:NamedIndividual ,
+                                                   :DictionaryItem ;
+                                          :hasDictionaryKey "FNR" ;
+                                          :hasDictionaryValue "0.015"^^xsd:double .
+
+
+###  http://www.aalto.fi/rxoms#sdn_local_outlier_factor_performance_accuracy
+:sdn_local_outlier_factor_performance_accuracy rdf:type owl:NamedIndividual ,
+                                                        :DictionaryItem ;
+                                               :hasDictionaryKey "accuracy" ;
+                                               :hasDictionaryValue "0.96"^^xsd:double .
+
+
+###  http://www.aalto.fi/rxoms#sdn_local_outlier_factor_performance_lastUpdate
+:sdn_local_outlier_factor_performance_lastUpdate rdf:type owl:NamedIndividual ,
+                                                          :DictionaryItem ;
+                                                 :hasDictionaryKey "lastUpdate" ;
+                                                 :hasDictionaryValue "1701789936"^^xsd:long .
+
+
+###  http://www.aalto.fi/rxoms#sdn_local_outlier_factor_training_params
+:sdn_local_outlier_factor_training_params rdf:type owl:NamedIndividual ,
+                                                   :TrainingParam ;
+                                          :hasDictionaryItem :sdn_local_outlier_factor_training_params_lastTrain ,
+                                                             :sdn_local_outlier_factor_training_params_n_neighbors ,
+                                                             :sdn_local_outlier_factor_training_params_novelty ,
+                                                             :sdn_local_outlier_factor_training_params_trainingData .
+
+
+###  http://www.aalto.fi/rxoms#sdn_local_outlier_factor_training_params_lastTrain
+:sdn_local_outlier_factor_training_params_lastTrain rdf:type owl:NamedIndividual ,
+                                                             :DictionaryItem ;
+                                                    :hasDictionaryKey "lastTrain" ;
+                                                    :hasDictionaryValue "1701789731"^^xsd:long .
+
+
+###  http://www.aalto.fi/rxoms#sdn_local_outlier_factor_training_params_n_neighbors
+:sdn_local_outlier_factor_training_params_n_neighbors rdf:type owl:NamedIndividual ,
+                                                               :DictionaryItem ;
+                                                      :hasDictionaryKey "n_neighbors" ;
+                                                      :hasDictionaryValue 2 .
+
+
+###  http://www.aalto.fi/rxoms#sdn_local_outlier_factor_training_params_novelty
+:sdn_local_outlier_factor_training_params_novelty rdf:type owl:NamedIndividual ,
+                                                           :DictionaryItem ;
+                                                  :hasDictionaryKey "novelty" ;
+                                                  :hasDictionaryValue "true"^^xsd:boolean .
+
+
+###  http://www.aalto.fi/rxoms#sdn_local_outlier_factor_training_params_trainingData
+:sdn_local_outlier_factor_training_params_trainingData rdf:type owl:NamedIndividual ,
+                                                                :DictionaryItem ;
+                                                       :hasDictionaryKey "trainingData" ;
+                                                       :hasDictionaryValue "527347e6-2733-4871-b917-b59747a63693" .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

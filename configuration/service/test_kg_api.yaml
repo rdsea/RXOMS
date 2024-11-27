@@ -1,0 +1,55 @@
+method_kg_list:
+- GET
+- POST
+- POST
+- POST
+- POST
+- POST
+- POST
+- POST
+- GET
+- POST
+- POST
+- POST
+- POST
+- POST
+payload_kg_list:
+- null
+-   id: T1498
+-   mac: '0000000000000002'
+-   eth_dst: 00:00:00:00:00:04
+    in_port: '5'
+    switch: '1'
+-   id: T1565
+-   id: T1498
+    mitigation: M1037
+-   mac: 00:00:00:00:00:07
+    status: attacked
+-   mac: '0000000000000002'
+    status: attacked
+- null
+-   eth_dst: 00:00:00:00:00:04
+    in_port: '5'
+    status: underflow
+    switch: '1'
+-   eth_dst: 00:00:00:00:00:04
+    in_port: '2'
+    switch: '1'
+-   mac: '0000000000000001'
+-   mac: '0000000000000002'
+-   id: 0d9dc5a5-15b9-44ce-8d36-9594e37ee644
+url_kg_list:
+- http://localhost:5050/graph
+- http://localhost:5050/get_cti_by_id
+- http://localhost:5050/get_dt_by_mac
+- http://localhost:5050/get_flow
+- http://localhost:5050/get_incident_metadata
+- http://localhost:5050/update_cti_by_id
+- http://localhost:5050/update_asset_by_mac
+- http://localhost:5050/update_switch
+- http://localhost:5050/reset_graph
+- http://localhost:5050/update_flow
+- http://localhost:5050/trace_root_cause_by_flow
+- http://localhost:5050/trace_root_cause_by_switch
+- http://localhost:5050/trace_consequence_by_switch
+- http://localhost:5050/get_detector

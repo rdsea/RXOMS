@@ -1,0 +1,50 @@
+anomaly:
+    anomaly_flow:
+        eth_dst: 00:00:00:00:00:08
+        id: 5ed9779e-dfd5-4218-b523-93fe427a8af2
+        in_port: 1
+        last_update: 1729164878.2728417
+        mean_byte_count: 20742.558933333334
+        mean_packet_count: 20.96746666666667
+        recent_byte_value: 0
+        recent_packet_value: 0
+        status: normal
+        switch: 2
+    anomaly_result:
+        byte_anomaly: -1
+        packet_anomaly: -1
+    common_metric:
+        byte_count: 0
+        packet_count: 0
+    ml_metric:
+        byte_scores: -0.166666666622222
+        packet_scores: -0.166666666622222
+detector:
+    configuration:
+        interval: 3
+        window: 100
+    detection_time: 1729164879.5559897
+    detector_name: sdn_isolation_forest_01
+    id: 0d9dc5a5-15b9-44ce-8d36-9594e37ee644
+    last_update: 1701789631
+    ml_algorithm: isolation_forest
+    performance:
+        FNR: 0.011
+        accuracy: 0.98
+        last_update: 1701789936
+id: e4e63779-0d5f-40ce-ba25-36ebb8c554ff
+monitor:
+    application_name: sdn
+    instance_id: rohe_test_isntance
+    monitoring_time: 15
+    stage_id: rohe_test_stage
+    user_id: aaltosea1
+physical_entity:
+    id: vgr
+    ip: 10.0.0.8
+    last_update: 0
+    mac: 00:00:00:00:00:08
+    name: vgr
+    status: normal
+    type: asset
+report_time: 1729164879.5559702

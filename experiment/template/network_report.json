@@ -1,0 +1,75 @@
+{
+  "1": {
+    "FlowStats": {
+      "byte_count": 143676372,
+      "eth_dst": "00:00:00:00:00:04",
+      "in_port": 5,
+      "out_port": 4,
+      "packet_count": 95026
+    },
+    "PortStats": {
+      "port_no": 4294967294,
+      "rx_bytes": 0,
+      "rx_errors": 0,
+      "rx_packets": 0,
+      "tx_bytes": 0,
+      "tx_errors": 0,
+      "tx_packets": 0
+    },
+    "byte_count": 23777114,
+    "flow_count": 4,
+    "packet_count": 111126
+  },
+  "2": {
+    "FlowStats": {
+      "byte_count": 1415400,
+      "eth_dst": "00:00:00:00:00:08",
+      "in_port": 6,
+      "out_port": 4,
+      "packet_count": 940
+    },
+    "PortStats": {
+      "port_no": 4294967294,
+      "rx_bytes": 0,
+      "rx_errors": 0,
+      "rx_packets": 0,
+      "tx_bytes": 0,
+      "tx_errors": 0,
+      "tx_packets": 0
+    },
+    "byte_count": 20930585020,
+    "flow_count": 1,
+    "packet_count": 456490
+  },
+  "3": {
+    "FlowStats": {
+      "byte_count": 0,
+      "eth_dst": "00:00:00:00:00:0b",
+      "in_port": 5,
+      "out_port": 3,
+      "packet_count": 0
+    },
+    "PortStats": {
+      "port_no": 4294967294,
+      "rx_bytes": 0,
+      "rx_errors": 0,
+      "rx_packets": 0,
+      "tx_bytes": 0,
+      "tx_errors": 0,
+      "tx_packets": 0
+    },
+    "byte_count": 1415400,
+    "flow_count": 1,
+    "packet_count": 940
+  },
+  "metadata": {
+    "application": "test_sdn",
+    "instance_name": "ryu_controller",
+    "instances_id": "bb0516cf-b611-48a9-b410-00e0393a2240",
+    "method": "sdn",
+    "role": "controller",
+    "stage_id": "controller",
+    "timestamp": 1692026641.7997072,
+    "userID": "aaltosea1"
+  }
+}

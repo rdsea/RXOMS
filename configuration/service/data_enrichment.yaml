@@ -1,0 +1,4 @@
+port: 5051
+host: 0.0.0.0
+kg_url: http://localhost:5050
+ia_url: http://localhost:5052

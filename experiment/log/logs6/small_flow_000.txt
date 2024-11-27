@@ -1,0 +1,14 @@
+------------------------------------------------------------
+Server listening on UDP port 4457
+Receiving 1470 byte datagrams
+UDP buffer size:  208 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.12 port 4457 connected with 10.0.0.11 port 47661
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0- 1.0 sec   718 KBytes  5.88 Mbits/sec  34.330 ms    0/  500 (0%)
+[  3] 0.00-1.00 sec  84 datagrams received out-of-order
+[  3]  1.0- 2.0 sec   472 KBytes  3.87 Mbits/sec   0.016 ms    0/  329 (0%)
+[  3]  2.0- 3.0 sec   533 KBytes  4.36 Mbits/sec   0.011 ms    0/  371 (0%)
+[  3]  3.0- 4.0 sec   810 KBytes  6.63 Mbits/sec   0.013 ms    0/  564 (0%)
+[  3]  4.0- 5.0 sec   696 KBytes  5.70 Mbits/sec   0.010 ms   17/  502 (3.4%)
+[  3]  5.0- 6.0 sec   596 KBytes  4.88 Mbits/sec   0.007 ms    0/  415 (0%)

@@ -1,0 +1,21 @@
+host: 0.0.0.0
+port: 5053
+kg_url: http://localhost:5050
+pe_url: http://localhost:5054
+qoa_config:
+  client:
+    username: aaltosea1
+    instance_name: incident_validation
+    stage_id: validation_service
+    functionality: REST
+    application_name: rxoms_sdn
+    role: incident_report_interface
+  connector:
+    - name: amqp_connector
+      connector_class: AMQP
+      config:
+        end_point: localhost
+        exchange_name: rxoms_sdn
+        exchange_type: topic
+        out_routing_key: sdn.client1
+        health_check_disable: true

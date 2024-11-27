@@ -1,0 +1,13 @@
+msg_id,content
+T1565.002,https://attack.mitre.org/techniques/T1565/002/
+T1498.001,https://attack.mitre.org/techniques/T1498/001/
+T1565.003,https://attack.mitre.org/techniques/T1565/003/
+M1029,https://attack.mitre.org/mitigations/M1029/
+M1030,https://attack.mitre.org/mitigations/M1030/
+T1498.002,https://attack.mitre.org/techniques/T1498/002/
+M1037,https://attack.mitre.org/mitigations/M1037/
+T1565,https://attack.mitre.org/techniques/T1565/
+T1565.001,https://attack.mitre.org/techniques/T1565/001/
+T1498,https://attack.mitre.org/techniques/T1498/
+M1022,https://attack.mitre.org/mitigations/M1022/
+M1041,https://attack.mitre.org/mitigations/M1041/

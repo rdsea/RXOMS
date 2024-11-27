@@ -1,0 +1,45 @@
+{
+  "dac6f467-e914-4723-8987-f3044159cb2a": {
+    "API": {
+      "A1037": {
+        "description": "Add_firewall_rule"
+      }
+    },
+    "configuration": {
+      "s1": "enable",
+      "s2": "enable"
+    },
+    "metadata": {},
+    "protect": [
+      "s1",
+      "mpo",
+      "sld",
+      "dps",
+      "mqttgw",
+      "s2",
+      "hbw",
+      "scc",
+      "vgr",
+      "opcuagw"
+    ],
+    "protectorName": "ryu-firewall",
+    "rules": {
+      "efa36423": {
+        "actions": "ALLOW",
+        "dl_type": "IPv4",
+        "nw_proto": "tcp"
+      },
+      "ehr215tf": {
+        "actions": "ALLOW",
+        "dl_type": "IPv4",
+        "nw_proto": "udp"
+      },
+      "ytkjk21e": {
+        "actions": "DENY",
+        "dl_type": "IPv4",
+        "nw_proto": "tcp",
+        "nw_src": "10.0.0.3"
+      }
+    }
+  }
+}

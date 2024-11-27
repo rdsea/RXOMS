@@ -1,0 +1,15 @@
+host: 0.0.0.0
+port: 5050
+mongo_config:
+  host: localhost
+  port: 27017
+  db: simulated_kg
+  collection: 
+    cti: cti_collection
+    dt: dt_collection
+    flow: flow_collection
+    incident: incident_collection
+    incident_metadata: incident_metadata_collection
+    detector: detector_collection
+    
+

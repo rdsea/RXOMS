@@ -1,0 +1,5 @@
+end_point: localhost
+exchange_name: sdn_exchange
+exchange_type: topic
+in_routing_key: sdn.#
+in_queue: collector_1

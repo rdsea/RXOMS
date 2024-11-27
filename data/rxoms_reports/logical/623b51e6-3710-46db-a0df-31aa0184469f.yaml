@@ -1,0 +1,57 @@
+id: 623b51e6-3710-46db-a0df-31aa0184469f
+incident:
+    T1498:
+        id: c7d5a539-cbe3-4d99-b88c-3f83fc92c974
+        incident_metadata:
+            created: '1555491710'
+            impact_type: availability
+            incident_name: Network_Denial_of_Service
+            last_update: '1648198910'
+            sub_techniques:
+            - T1498.001
+            - T1498.002
+            tatic: impact
+        incident_type: T1498
+        last_update: 1729164888.3138852
+        metrics:
+        - 881157a5-a7fc-49ae-8339-80e69bbed280
+        - a99ae561-aebd-47d8-af31-0d9455015330
+        - 8623590e-3d38-4a65-b860-5907f813fafd
+        - 18d64850-8d5f-40ea-98a8-0584cc1b3c9a
+        - 409e5cda-c875-4638-b7f2-e04b57f5ba81
+        - 17180784-f763-41e5-9294-a18a58f080e2
+        - e2da946f-66b0-4522-92b7-70081f2a5016
+        - da932fc4-b51c-462c-8126-37e400eb42c8
+        - 6b15afb4-7bcd-469f-844e-0748707c4992
+        - 38421096-b24c-4fd2-9d42-4a8fedb99585
+        - f64e4863-e35f-41fb-943d-3b78cfaa64bc
+        - 9c3f80da-4ecc-4e78-b602-ceb57e23be27
+        - 259e9bba-6c15-4acf-98fd-d69b10b0fc43
+        runtime_pattern:
+            incident_time:
+                duration: 7.6239917278289795
+                start_time: 1729164880.689908
+            pattern:
+            - de442f9c-f221-4d5f-b17b-e5570217ac5c
+            - 011f4265-28ff-40e1-a772-eba12db051e5
+            - b7e30422-9b6f-4abe-8a47-ad120cba6f6e
+            - 2150b9b2-3a43-48c7-8500-8eec2fdc7b0a
+            - 2a6ea0ca-d3fe-4c1d-94c5-c356dd8a384e
+            - 1889de2f-82ca-4281-8600-1a50f12e3b4b
+            - a627bd88-e4f3-4a62-b19c-347bbaa346a3
+incident_cause:
+    root_cause:
+        00:00:00:00:00:02: hbw
+        00:00:00:00:00:03: mpo
+        00:00:00:00:00:07: ssc
+        00:00:00:00:00:08: vgr
+incident_consequence:
+    affected_dt:
+        '0000000000000001': s1
+        00:00:00:00:00:01: dps
+        00:00:00:00:00:02: hbw
+        00:00:00:00:00:04: mqttgateway
+        00:00:00:00:00:05: opcuagateway
+        00:00:00:00:00:06: sld
+    target_dt:
+        00:00:00:00:00:04: mqttgateway

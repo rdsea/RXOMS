@@ -1,0 +1,43 @@
+{
+  "M1022": {
+    "incidentsList": [
+      "T1565",
+      "T1565.001",
+      "T1565.003"
+    ],
+    "mitigationName": "Restrict_File_and_Directory_Permissions"
+  },
+  "M1029": {
+    "incidentsList": [
+      "T1565",
+      "T1565.001",
+      "T1119"
+    ],
+    "mitigationName": "Remote_Data_Storage"
+  },
+  "M1030": {
+    "incidentsList": [
+      "T1565",
+      "T1565.003",
+      "T1098"
+    ],
+    "mitigationName": "Network_Segmentation"
+  },
+  "M1037": {
+    "incidentsList": [
+      "T1498",
+      "T1557",
+      "T1071",
+      "T1197"
+    ],
+    "mitigationName": "Filter_Network_Traffic"
+  },
+  "M1041": {
+    "incidentsList": [
+      "T1565",
+      "T1565.001",
+      "T1565.002"
+    ],
+    "mitigationName": "Encrypt_Sensitive_Information"
+  }
+}

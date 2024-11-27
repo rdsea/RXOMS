@@ -1,0 +1,10 @@
+mltool1:
+  toolID: 0d9dc5a5-15b9-44ce-8d36-9594e37ee644
+  mlAlgorithm: sdn_isolation_forest
+  last_update: 1701789936
+  incidentType: T1498
+mltool2:
+  toolID: 85fa8532-5086-4284-9d46-33acd6f08e0f
+  mlAlgorithm: sdn_local_outlier_factor
+  last_update: 1701789936
+  incidentType: T1498

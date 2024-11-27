@@ -1,0 +1,25 @@
+------------------------------------------------------------
+Server listening on TCP port 54618
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  4] local 10.0.0.7 port 54618 connected with 10.0.0.4 port 42136
+[ ID] Interval       Transfer     Bandwidth
+[  4]  0.0- 1.0 sec  67.9 MBytes   569 Mbits/sec
+[  4]  1.0- 2.0 sec  96.9 MBytes   813 Mbits/sec
+[  4]  2.0- 3.0 sec  80.1 MBytes   672 Mbits/sec
+[  4]  3.0- 4.0 sec   117 MBytes   985 Mbits/sec
+[  4]  4.0- 5.0 sec   136 MBytes  1.14 Gbits/sec
+[  4]  5.0- 6.0 sec  88.1 MBytes   739 Mbits/sec
+[  4]  6.0- 7.0 sec   192 MBytes  1.61 Gbits/sec
+[  4]  7.0- 8.0 sec   104 MBytes   869 Mbits/sec
+[  4]  8.0- 9.0 sec   113 MBytes   944 Mbits/sec
+[  4]  9.0-10.0 sec   104 MBytes   871 Mbits/sec
+[  4] 10.0-11.0 sec   322 MBytes  2.71 Gbits/sec
+[  4] 11.0-12.0 sec  85.3 MBytes   715 Mbits/sec
+[  4] 12.0-13.0 sec  71.8 MBytes   602 Mbits/sec
+[  4] 13.0-14.0 sec   127 MBytes  1.07 Gbits/sec
+[  4] 14.0-15.0 sec   149 MBytes  1.25 Gbits/sec
+[  4] 15.0-16.0 sec  92.4 MBytes   775 Mbits/sec
+[  4] 16.0-17.0 sec   109 MBytes   915 Mbits/sec
+[  4] 17.0-18.0 sec   209 MBytes  1.76 Gbits/sec
+[  4] 18.0-19.0 sec   275 MBytes  2.30 Gbits/sec

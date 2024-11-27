@@ -1,0 +1,50 @@
+anomaly:
+    anomaly_flow:
+        eth_dst: 00:00:00:00:00:05
+        id: a627bd88-e4f3-4a62-b19c-347bbaa346a3
+        in_port: 3
+        last_update: 1729164884.0209336
+        mean_byte_count: 2497151.6465256796
+        mean_packet_count: 1652.1404833836857
+        recent_byte_value: 9712292
+        recent_packet_value: 6427
+        status: overflow
+        switch: 2
+    anomaly_result:
+        byte_anomaly: -1
+        packet_anomaly: -1
+    common_metric:
+        byte_count: 9712292
+        packet_count: 6427
+    ml_metric:
+        byte_scores: -1.4972084625358564
+        packet_scores: -1.4972090604999102
+detector:
+    configuration:
+        interval: 3
+        window: 100
+    detection_time: 1729164887.722
+    detector_name: sdn_isolation_forest_01
+    id: 0d9dc5a5-15b9-44ce-8d36-9594e37ee644
+    last_update: 1701789631
+    ml_algorithm: isolation_forest
+    performance:
+        FNR: 0.011
+        accuracy: 0.98
+        last_update: 1701789936
+id: cfd28fb7-3ade-4e8b-ac2a-ecc11200deaa
+monitor:
+    application_name: sdn
+    instance_id: rohe_test_isntance
+    monitoring_time: 17
+    stage_id: rohe_test_stage
+    user_id: aaltosea1
+physical_entity:
+    id: opcuagateway
+    ip: 10.0.0.5
+    last_update: 1729164887.6052063
+    mac: 00:00:00:00:00:05
+    name: opcuagateway
+    status: affected
+    type: gateway
+report_time: 1729164887.7219808

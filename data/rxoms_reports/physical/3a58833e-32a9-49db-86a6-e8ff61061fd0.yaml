@@ -1,0 +1,50 @@
+anomaly:
+    anomaly_flow:
+        eth_dst: 00:00:00:00:00:08
+        id: 68c802a0-1303-4bb4-8e3c-d1621b5e467d
+        in_port: 4
+        last_update: 1729164882.5508723
+        mean_byte_count: 20215.578735632185
+        mean_packet_count: 21.59683908045977
+        recent_byte_value: 252
+        recent_packet_value: 6
+        status: underflow
+        switch: 1
+    anomaly_result:
+        byte_anomaly: -1
+        packet_anomaly: -1
+    common_metric:
+        byte_count: 252
+        packet_count: 6
+    ml_metric:
+        byte_scores: -1.5002208771764691
+        packet_scores: -1.5000249920888264
+detector:
+    configuration:
+        interval: 3
+        window: 100
+    detection_time: 1729164885.7616496
+    detector_name: sdn_local_outlier_factor_02
+    id: a6a7e044-7ea9-409b-b72a-cbcba4aafb11
+    last_update: 1701789731
+    ml_algorithm: local_outlier_factor
+    performance:
+        FNR: 0.015
+        accuracy: 0.96
+        last_update: 1701789936
+id: 3a58833e-32a9-49db-86a6-e8ff61061fd0
+monitor:
+    application_name: sdn
+    instance_id: rohe_test_isntance
+    monitoring_time: 17
+    stage_id: rohe_test_stage
+    user_id: aaltosea1
+physical_entity:
+    id: vgr
+    ip: 10.0.0.8
+    last_update: 1729164885.62579
+    mac: 00:00:00:00:00:08
+    name: vgr
+    status: attack
+    type: asset
+report_time: 1729164885.76163

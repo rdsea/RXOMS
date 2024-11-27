@@ -1,0 +1,50 @@
+anomaly:
+    anomaly_flow:
+        eth_dst: 00:00:00:00:00:07
+        id: 546fe0e7-3bee-4568-bfe9-595fcdd76085
+        in_port: 4
+        last_update: 1729164878.3902733
+        mean_byte_count: 19987.666091954023
+        mean_packet_count: 21.2382183908046
+        recent_byte_value: 210
+        recent_packet_value: 5
+        status: normal
+        switch: 1
+    anomaly_result:
+        byte_anomaly: -1
+        packet_anomaly: -1
+    common_metric:
+        byte_count: 252
+        packet_count: 6
+    ml_metric:
+        byte_scores: -0.1666316684991957
+        packet_scores: -0.166651598449991
+detector:
+    configuration:
+        interval: 3
+        window: 100
+    detection_time: 1729164880.428173
+    detector_name: sdn_local_outlier_factor_02
+    id: a6a7e044-7ea9-409b-b72a-cbcba4aafb11
+    last_update: 1701789731
+    ml_algorithm: local_outlier_factor
+    performance:
+        FNR: 0.015
+        accuracy: 0.96
+        last_update: 1701789936
+id: 4dc36c95-8071-4ba9-b14c-edd0b78ea2b8
+monitor:
+    application_name: sdn
+    instance_id: rohe_test_isntance
+    monitoring_time: 15
+    stage_id: rohe_test_stage
+    user_id: aaltosea1
+physical_entity:
+    id: ssc
+    ip: 10.0.0.7
+    last_update: 0
+    mac: 00:00:00:00:00:07
+    name: ssc
+    status: normal
+    type: asset
+report_time: 1729164880.4281533

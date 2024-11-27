@@ -1,0 +1,48 @@
+{
+  "A1022": {
+    "function": "fileRestriction",
+    "module": "securityProtection",
+    "params": [
+      "fileUrl",
+      "permission"
+    ]
+  },
+  "A1029": {
+    "function": "remoteDataStorage",
+    "module": "securityProtection",
+    "params": [
+      "storageUrl",
+      "actions"
+    ]
+  },
+  "A1030": {
+    "function": "networkSegmentation",
+    "module": "securityProtection",
+    "params": [
+      "switchID",
+      "nw_proto",
+      "actions"
+    ]
+  },
+  "A1037": {
+    "function": "firewallFilter",
+    "module": "securityProtection",
+    "params": [
+      "switchID",
+      "nw_proto",
+      "dl_type",
+      "nw_src",
+      "nw_dst",
+      "actions"
+    ]
+  },
+  "A1041": {
+    "function": "encryptData",
+    "module": "securityProtection",
+    "params": [
+      "method",
+      "key",
+      "condition"
+    ]
+  }
+}

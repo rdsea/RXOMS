@@ -1,0 +1,15 @@
+client:
+  user_id: aaltosea1
+  instance_id: p260
+  stage_id: controller
+  functionality: sdn-network-control
+  application_name: sdn-simulation
+  role: network-controller
+connector:
+  name: amqp_connector
+  connector_class: AMQP
+  config:
+    end_point: localhost
+    exchange_name: sdn_exchange
+    exchange_type: topic
+    out_routing_key: sdn.controller

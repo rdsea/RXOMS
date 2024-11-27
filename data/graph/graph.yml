@@ -1,0 +1,476 @@
+---
+cti:
+  T1498:
+  - M1037
+  T1498.001:
+  - M1037
+  T1498.002:
+  - M1037
+  T1565:
+  - M1041
+  - M1030
+  - M1029
+  - M1022
+  T1565.001:
+  - M1041
+  - M1029
+  - M1022
+  T1565.002:
+  - M1041
+  T1565.003:
+  - M1030
+  - M1022
+digital_twin:
+  dps:
+    ip: 10.0.0.1
+    last_update: 0
+    mac: 00:00:00:00:00:01
+    name: dps
+    status: normal
+    type: asset
+  hbw:
+    ip: 10.0.0.2
+    last_update: 0
+    mac: 00:00:00:00:00:02
+    name: hbw
+    status: normal
+    type: asset
+  mpo:
+    ip: 10.0.0.3
+    last_update: 0
+    mac: 00:00:00:00:00:03
+    name: mpo
+    status: normal
+    type: asset
+  mqttgateway:
+    ip: 10.0.0.4
+    last_update: 0
+    mac: 00:00:00:00:00:04
+    name: mqttgateway
+    norm_value: 0
+    status: normal
+    type: gateway
+  opcuagateway:
+    ip: 10.0.0.5
+    last_update: 0
+    mac: 00:00:00:00:00:05
+    name: opcuagateway
+    norm_value: 0
+    status: normal
+    type: gateway
+  s1:
+    id: 1
+    last_update: 0
+    mac: '0000000000000001'
+    max_byte: 15000000
+    max_packet: 10000
+    name: s1
+    port:
+      '1': 00:00:00:00:00:03
+      '2': 00:00:00:00:00:06
+      '3': 00:00:00:00:00:01
+      '4': 00:00:00:00:00:04
+      '5': '0000000000000002'
+    status: normal
+    sum_byte: 10322473
+    sum_packet: 6876
+    type: switch
+  s2:
+    id: 2
+    last_update: 0
+    mac: '0000000000000002'
+    max_byte: 20000000
+    max_packet: 15000
+    name: s2
+    port:
+      '1': 00:00:00:00:00:05
+      '2': '0000000000000001'
+      '3': 00:00:00:00:00:07
+      '4': 00:00:00:00:00:08
+      '5': 00:00:00:00:00:02
+    status: normal
+    sum_byte: 16675272
+    sum_packet: 11079
+    type: switch
+  sld:
+    ip: 10.0.0.6
+    last_update: 0
+    mac: 00:00:00:00:00:06
+    name: sld
+    status: normal
+    type: asset
+  ssc:
+    ip: 10.0.0.7
+    last_update: 0
+    mac: 00:00:00:00:00:07
+    name: ssc
+    status: normal
+    type: asset
+  vgr:
+    ip: 10.0.0.8
+    last_update: 0
+    mac: 00:00:00:00:00:08
+    name: vgr
+    status: normal
+    type: asset
+flow:
+  011f4265-28ff-40e1-a772-eba12db051e5:
+    eth_dst: 00:00:00:00:00:04
+    in_port: 5
+    mean_byte_count: 2739366.8287356324
+    mean_packet_count: 1812.592528735632
+    recent_byte_value: -1
+    recent_packet_value: -1
+    switch: 1
+    last_update: 0
+    status: normal
+    detector: a6a7e044-7ea9-409b-b72a-cbcba4aafb11
+  07076701-6f3f-46fd-9148-2f72840c471b:
+    eth_dst: 00:00:00:00:00:02
+    in_port: 2
+    mean_byte_count: 20905.1632
+    mean_packet_count: 21.375466666666664
+    recent_byte_value: -1
+    recent_packet_value: -1
+    switch: 2
+    last_update: 0
+    status: normal
+    detector: 0d9dc5a5-15b9-44ce-8d36-9594e37ee644
+  0723e97b-7b39-4c85-a079-7b0cc562a3e2:
+    eth_dst: 00:00:00:00:00:04
+    in_port: 3
+    mean_byte_count: 3684914.6860158304
+    mean_packet_count: 2437.6767810026386
+    recent_byte_value: -1
+    recent_packet_value: -1
+    switch: 1
+    last_update: 0
+    status: normal
+    detector: a6a7e044-7ea9-409b-b72a-cbcba4aafb11
+  0d8b53fc-78ac-4b46-bb97-d521e6b92c4c:
+    eth_dst: 00:00:00:00:00:03
+    in_port: 4
+    mean_byte_count: 22206.706199460918
+    mean_packet_count: 22.416711590296497
+    recent_byte_value: -1
+    recent_packet_value: -1
+    switch: 1
+    last_update: 0
+    status: normal
+    detector: a6a7e044-7ea9-409b-b72a-cbcba4aafb11
+  1889de2f-82ca-4281-8600-1a50f12e3b4b:
+    eth_dst: 00:00:00:00:00:05
+    in_port: 4
+    mean_byte_count: 3640305.880733945
+    mean_packet_count: 2408.163608562691
+    recent_byte_value: -1
+    recent_packet_value: -1
+    switch: 2
+    last_update: 0
+    status: normal
+    detector: 0d9dc5a5-15b9-44ce-8d36-9594e37ee644
+  1d0341e3-9afe-4925-b4c0-c75c2fd99086:
+    eth_dst: 00:00:00:00:00:02
+    in_port: 4
+    mean_byte_count: 20844.72572944297
+    mean_packet_count: 21.31220159151194
+    recent_byte_value: -1
+    recent_packet_value: -1
+    switch: 1
+    last_update: 0
+    status: normal
+    detector: a6a7e044-7ea9-409b-b72a-cbcba4aafb11
+  2150b9b2-3a43-48c7-8500-8eec2fdc7b0a:
+    eth_dst: 00:00:00:00:00:04
+    in_port: 3
+    mean_byte_count: 3167658.3344129557
+    mean_packet_count: 2095.8534412955464
+    recent_byte_value: -1
+    recent_packet_value: -1
+    switch: 2
+    last_update: 0
+    status: normal
+    detector: 0d9dc5a5-15b9-44ce-8d36-9594e37ee644
+  2a6ea0ca-d3fe-4c1d-94c5-c356dd8a384e:
+    eth_dst: 00:00:00:00:00:04
+    in_port: 1
+    mean_byte_count: 1910148.2877777778
+    mean_packet_count: 1264.085
+    recent_byte_value: -1
+    recent_packet_value: -1
+    switch: 1
+    last_update: 0
+    status: normal
+    detector: a6a7e044-7ea9-409b-b72a-cbcba4aafb11
+  546fe0e7-3bee-4568-bfe9-595fcdd76085:
+    eth_dst: 00:00:00:00:00:07
+    in_port: 4
+    mean_byte_count: 19987.666091954023
+    mean_packet_count: 21.2382183908046
+    recent_byte_value: -1
+    recent_packet_value: -1
+    switch: 1
+    last_update: 0
+    status: normal
+    detector: a6a7e044-7ea9-409b-b72a-cbcba4aafb11
+  59596040-d94e-49ae-8192-d78a182264ab:
+    eth_dst: 00:00:00:00:00:04
+    in_port: 2
+    mean_byte_count: 1860795.471618037
+    mean_packet_count: 1231.2490716180373
+    recent_byte_value: -1
+    recent_packet_value: -1
+    switch: 1
+    last_update: 0
+    status: normal
+    detector: a6a7e044-7ea9-409b-b72a-cbcba4aafb11
+  5ed9779e-dfd5-4218-b523-93fe427a8af2:
+    eth_dst: 00:00:00:00:00:08
+    in_port: 1
+    mean_byte_count: 20742.558933333334
+    mean_packet_count: 20.96746666666667
+    recent_byte_value: -1
+    recent_packet_value: -1
+    switch: 2
+    last_update: 0
+    status: normal
+    detector: 0d9dc5a5-15b9-44ce-8d36-9594e37ee644
+  68c802a0-1303-4bb4-8e3c-d1621b5e467d:
+    eth_dst: 00:00:00:00:00:08
+    in_port: 4
+    mean_byte_count: 20215.578735632185
+    mean_packet_count: 21.59683908045977
+    recent_byte_value: -1
+    recent_packet_value: -1
+    switch: 1
+    last_update: 0
+    status: normal
+    detector: a6a7e044-7ea9-409b-b72a-cbcba4aafb11
+  6d004bc3-765f-4fcf-bb00-e5c441acb6f6:
+    eth_dst: 00:00:00:00:00:07
+    in_port: 1
+    mean_byte_count: 20677.794666666665
+    mean_packet_count: 20.858133333333335
+    recent_byte_value: -1
+    recent_packet_value: -1
+    switch: 2
+    last_update: 0
+    status: normal
+    detector: 0d9dc5a5-15b9-44ce-8d36-9594e37ee644
+  7a06f234-a086-49db-8226-5a9f82ef39bc:
+    eth_dst: 00:00:00:00:00:08
+    in_port: 2
+    mean_byte_count: 22612.706752411574
+    mean_packet_count: 23.977170418006434
+    recent_byte_value: -1
+    recent_packet_value: -1
+    switch: 2
+    last_update: 0
+    status: normal
+    detector: 0d9dc5a5-15b9-44ce-8d36-9594e37ee644
+  8617f775-d96c-42b2-a9db-d5f9e84aa227:
+    eth_dst: 00:00:00:00:00:01
+    in_port: 4
+    mean_byte_count: 21957.041160949866
+    mean_packet_count: 22.009498680738787
+    recent_byte_value: -1
+    recent_packet_value: -1
+    switch: 1
+    last_update: 0
+    status: normal
+    detector: a6a7e044-7ea9-409b-b72a-cbcba4aafb11
+  86707627-17d3-4aa7-adf8-ea62854c9ae8:
+    eth_dst: 00:00:00:00:00:07
+    in_port: 2
+    mean_byte_count: 22357.584565916397
+    mean_packet_count: 23.573633440514467
+    recent_byte_value: -1
+    recent_packet_value: -1
+    switch: 2
+    last_update: 0
+    status: normal
+    detector: 0d9dc5a5-15b9-44ce-8d36-9594e37ee644
+  9803b144-6703-4e09-a59b-0870dd412c52:
+    eth_dst: 00:00:00:00:00:04
+    in_port: 5
+    mean_byte_count: 1846438.481690141
+    mean_packet_count: 1221.880281690141
+    recent_byte_value: -1
+    recent_packet_value: -1
+    switch: 2
+    last_update: 0
+    status: normal
+    detector: 0d9dc5a5-15b9-44ce-8d36-9594e37ee644
+  a627bd88-e4f3-4a62-b19c-347bbaa346a3:
+    eth_dst: 00:00:00:00:00:05
+    in_port: 3
+    mean_byte_count: 2497151.6465256796
+    mean_packet_count: 1652.1404833836857
+    recent_byte_value: -1
+    recent_packet_value: -1
+    switch: 2
+    last_update: 0
+    status: normal
+    detector: 0d9dc5a5-15b9-44ce-8d36-9594e37ee644
+  b7e30422-9b6f-4abe-8a47-ad120cba6f6e:
+    eth_dst: 00:00:00:00:00:05
+    in_port: 5
+    mean_byte_count: 2482531.5014749262
+    mean_packet_count: 1642.6002949852507
+    recent_byte_value: -1
+    recent_packet_value: -1
+    switch: 2
+    last_update: 0
+    status: normal
+    detector: 0d9dc5a5-15b9-44ce-8d36-9594e37ee644
+  cdb0ef17-fa3d-4fae-86cf-f5fc76bf5d9b:
+    eth_dst: 00:00:00:00:00:06
+    in_port: 4
+    mean_byte_count: 22036.225329815305
+    mean_packet_count: 22.045910290237465
+    recent_byte_value: -1
+    recent_packet_value: -1
+    switch: 1
+    last_update: 0
+    status: normal
+    detector: a6a7e044-7ea9-409b-b72a-cbcba4aafb11
+  de442f9c-f221-4d5f-b17b-e5570217ac5c:
+    eth_dst: 00:00:00:00:00:04
+    in_port: 4
+    mean_byte_count: 2912747.4834008096
+    mean_packet_count: 1927.0676113360325
+    recent_byte_value: -1
+    recent_packet_value: -1
+    switch: 2
+    last_update: 0
+    status: normal
+    detector: 0d9dc5a5-15b9-44ce-8d36-9594e37ee644
+  f41e7b58-67d4-4bc1-b728-a81fa6b767f1:
+    eth_dst: 00:00:00:00:00:02
+    in_port: 1
+    mean_byte_count: 21143.196799999998
+    mean_packet_count: 21.451200000000004
+    recent_byte_value: -1
+    recent_packet_value: -1
+    switch: 2
+    last_update: 0
+    status: normal
+    detector: 0d9dc5a5-15b9-44ce-8d36-9594e37ee644
+incident: {}
+incident_metadata:
+  T1498:
+    created: '1555491710'
+    impact_type: availability
+    incident_name: Network_Denial_of_Service
+    last_update: '1648198910'
+    sub_techniques:
+    - T1498.001
+    - T1498.002
+    tatic: impact
+  T1498.001:
+    created: '1583139710'
+    impact_type: availability
+    incident_name: Network_Denial_of_Service_Direct_Network_Flood
+    last_update: '1680166910'
+    sub_techniques: []
+    tatic: impact
+  T1498.002:
+    created: '1583139710'
+    impact_type: availability
+    incident_name: Network_Denial_of_Service_Reflection_Amplication
+    last_update: '1680166910'
+    sub_techniques: []
+    tatic: impact
+  T1565:
+    created: '1583139710'
+    impact_type: integrity
+    incident_name: Data_Manipulation
+    last_update: '1681894910'
+    sub_techniques:
+    - T1565.001
+    - T1565.002
+    - T1565.003
+    tatic: impact
+  T1565.001:
+    created: '1583139710'
+    impact_type: integrity
+    incident_name: Data_Manipulation_Stored_Data_Manipulation
+    last_update: '1681894910'
+    sub_techniques: []
+    tatic: impact
+  T1565.002:
+    created: '1583139710'
+    impact_type: integrity
+    incident_name: Data_Manipulation_Transmitted_Data_Manipulation
+    last_update: '1681894910'
+    sub_techniques: []
+    tatic: impact
+  T1565.003:
+    created: '1583139710'
+    impact_type: integrity
+    incident_name: Data_Manipulation_Runtime_Data_Manipulation
+    last_update: '1679734910'
+    sub_techniques: []
+    tatic: impact
+detector:
+  0d9dc5a5-15b9-44ce-8d36-9594e37ee644:
+    configuration:
+      interval: 3
+      window: 100
+    detecting:
+    - s2
+    - hbw
+    - scc
+    - vgr
+    - opcuagw
+    detector_name: sdn_isolation_forest_01
+    ml_algorithm: isolation_forest
+    metadata:
+      last_train: 1701789631
+      trainParam:
+        contamination: 0.05
+        random_seed: 1
+      trainingData: aa2c0874-28db-4c4a-8080-af3b0c4c7bd9
+    performance:
+      FNR: 0.011
+      accuracy: 0.98
+      last_update: 1701789936
+  85fa8532-5086-4284-9d46-33acd6f08e0f:
+    configuration:
+      interval: 10
+      window: 200
+    detecting: []
+    detector_name: sdn_local_outlier_factor_01
+    ml_algorithm: local_outlier_factor
+    metadata:
+      last_train: 1701789839
+      trainParam:
+        n_neighbors: 2
+        novelty: 'True'
+      trainingData: 6b522d87-870e-42c3-abd2-bc6b69b43c1a
+    performance:
+      FNR: 0.021
+      accuracy: 0.95
+      last_update: 1701789936
+  a6a7e044-7ea9-409b-b72a-cbcba4aafb11:
+    configuration:
+      interval: 3
+      window: 100
+    detecting:
+    - s1
+    - mpo
+    - sld
+    - dps
+    - mqttgw
+    detector_name: sdn_local_outlier_factor_02
+    ml_algorithm: local_outlier_factor
+    metadata:
+      last_train: 1701789731
+      trainParam:
+        n_neighbors: 2
+        novelty: 'True'
+      trainingData: 527347e6-2733-4871-b917-b59747a63693
+    performance:
+      FNR: 0.015
+      accuracy: 0.96
+      last_update: 1701789936

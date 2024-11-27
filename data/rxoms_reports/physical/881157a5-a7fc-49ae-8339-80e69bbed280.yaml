@@ -1,0 +1,50 @@
+anomaly:
+    anomaly_flow:
+        eth_dst: 00:00:00:00:00:04
+        id: de442f9c-f221-4d5f-b17b-e5570217ac5c
+        in_port: 4
+        last_update: 1729164878.9743826
+        mean_byte_count: 2912747.4834008096
+        mean_packet_count: 1927.0676113360325
+        recent_byte_value: 26453134
+        recent_packet_value: 17508
+        status: normal
+        switch: 2
+    anomaly_result:
+        byte_anomaly: -1
+        packet_anomaly: -1
+    common_metric:
+        byte_count: 26740414
+        packet_count: 17698
+    ml_metric:
+        byte_scores: -0.1666590977147959
+        packet_scores: -0.1666908059552927
+detector:
+    configuration:
+        interval: 3
+        window: 100
+    detection_time: 1729164880.6690469
+    detector_name: sdn_isolation_forest_01
+    id: 0d9dc5a5-15b9-44ce-8d36-9594e37ee644
+    last_update: 1701789631
+    ml_algorithm: isolation_forest
+    performance:
+        FNR: 0.011
+        accuracy: 0.98
+        last_update: 1701789936
+id: 881157a5-a7fc-49ae-8339-80e69bbed280
+monitor:
+    application_name: sdn
+    instance_id: rohe_test_isntance
+    monitoring_time: 15
+    stage_id: rohe_test_stage
+    user_id: aaltosea1
+physical_entity:
+    id: mqttgateway
+    ip: 10.0.0.4
+    last_update: 0
+    mac: 00:00:00:00:00:04
+    name: mqttgateway
+    status: normal
+    type: gateway
+report_time: 1729164880.6690264

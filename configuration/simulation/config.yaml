@@ -1,0 +1,14 @@
+data: /experiment/data/report/detection/incident.csv
+url: http://localhost:5010/securityproxy
+metadata: /experiment/configuration/mltool/mltool.yaml
+graph: /experiment/data/graph/graph.json
+attack:
+  mpo:
+  - start: 0
+    duration: 20
+    flow: 100
+    target: mqttgateway
+  - start: 100
+    duration: 30
+    flow: 20
+    target: gateway

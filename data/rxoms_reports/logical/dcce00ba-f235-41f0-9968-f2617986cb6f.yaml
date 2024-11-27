@@ -1,0 +1,43 @@
+id: dcce00ba-f235-41f0-9968-f2617986cb6f
+incident:
+    T1498:
+        id: 5e5346e5-78c0-46c6-acd5-28958e8739d1
+        incident_metadata:
+            created: '1555491710'
+            impact_type: availability
+            incident_name: Network_Denial_of_Service
+            last_update: '1648198910'
+            sub_techniques:
+            - T1498.001
+            - T1498.002
+            tatic: impact
+        incident_type: T1498
+        last_update: 1729164888.0282733
+        metrics:
+        - 2cbbc5d8-4359-4d62-b112-b19b7847d4ad
+        - fa56bacf-9cf5-4cdb-b95f-30be4f422cb0
+        - 91335351-0443-4084-8182-1e20f0f2a3e9
+        - 0bd1ca11-bd7b-472a-a257-e2fda71ae20a
+        - de758ee1-f755-4892-8f46-f460ae8147fb
+        - cfd28fb7-3ade-4e8b-ac2a-ecc11200deaa
+        - 2a294002-0e2e-4bc3-bfff-4b5edd457c74
+        runtime_pattern:
+            incident_time:
+                duration: 8.329221487045288
+                start_time: 1729164879.6990669
+            pattern:
+            - b7e30422-9b6f-4abe-8a47-ad120cba6f6e
+            - a627bd88-e4f3-4a62-b19c-347bbaa346a3
+            - 1889de2f-82ca-4281-8600-1a50f12e3b4b
+incident_cause:
+    root_cause:
+        00:00:00:00:00:02: hbw
+        00:00:00:00:00:07: ssc
+        00:00:00:00:00:08: vgr
+incident_consequence:
+    affected_dt:
+        '0000000000000001': s1
+        00:00:00:00:00:02: hbw
+        00:00:00:00:00:05: opcuagateway
+    target_dt:
+        00:00:00:00:00:05: opcuagateway

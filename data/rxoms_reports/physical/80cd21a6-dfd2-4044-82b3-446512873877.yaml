@@ -1,0 +1,50 @@
+anomaly:
+    anomaly_flow:
+        eth_dst: 00:00:00:00:00:01
+        id: 8617f775-d96c-42b2-a9db-d5f9e84aa227
+        in_port: 4
+        last_update: 1729164879.448036
+        mean_byte_count: 21957.041160949866
+        mean_packet_count: 22.009498680738787
+        recent_byte_value: 10178
+        recent_packet_value: 11
+        status: underflow
+        switch: 1
+    anomaly_result:
+        byte_anomaly: -1
+        packet_anomaly: -1
+    common_metric:
+        byte_count: 12870
+        packet_count: 14
+    ml_metric:
+        byte_scores: -0.8330565902378342
+        packet_scores: -0.8334147488417387
+detector:
+    configuration:
+        interval: 3
+        window: 100
+    detection_time: 1729164882.0152571
+    detector_name: sdn_local_outlier_factor_02
+    id: a6a7e044-7ea9-409b-b72a-cbcba4aafb11
+    last_update: 1701789731
+    ml_algorithm: local_outlier_factor
+    performance:
+        FNR: 0.015
+        accuracy: 0.96
+        last_update: 1701789936
+id: 80cd21a6-dfd2-4044-82b3-446512873877
+monitor:
+    application_name: sdn
+    instance_id: rohe_test_isntance
+    monitoring_time: 16
+    stage_id: rohe_test_stage
+    user_id: aaltosea1
+physical_entity:
+    id: dps
+    ip: 10.0.0.1
+    last_update: 1729164881.7646484
+    mac: 00:00:00:00:00:01
+    name: dps
+    status: affected
+    type: asset
+report_time: 1729164882.0152376
